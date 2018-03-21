@@ -1,0 +1,23 @@
+.footer {
+	background-color: #1D404C;
+	color: white;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.footer ul li {
+	list-style-type: none;
+}
+
+.footer p {
+		color: yellow;
+		text-align: center;
+}
+
+.copyright {
+	background-color: black;
+	color: yellow;
+	max-width: 100%;
+	text-align: center;
+	padding: 10px;
+}

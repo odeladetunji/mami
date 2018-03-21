@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: verdana;
+}
+
+.langingSection {
+	    width: 100%;
+	    margin: 0px;
+    	background-color: #235C75;
+    	margin-top: 0px;
+}
+
+#titleMami {
+	margin-top: 0px;
+}
+
+.landingCover {
+	background-color: #235C75;
+	padding-top: 250px;
+	padding-bottom: 350px;
+}
+
+#enterButton {
+	width: 100px;
+	border: 5px solid orange;
+	color: white;
+	text-align: center;
+	margin: auto;
+	padding-top: 37px;
+	padding-bottom: 37px;
+	border-radius: 50%;
+}
+
+#entercaption {
+	margin: auto;
+	padding: 10px;
+	color: white;
+	text-align: center;
+}
+
+.row {
+    margin: 0px;
+}
+
+.mainCongratesMessage {
+	padding-top: 50px;
+	padding-bottom: 100px;
+	border-top: 1px solid white;
+	background-color: #235C75;
+}
+
+.mainCongratesMessage p, .mainCongratesMessage h3, .mainCongratesMessage h1 {
+	color: white;
+}
+
+ .mainCongratesMessage h1 {
+	font-weight: bold;
+}
+.mainCongratesMessage button {
+	border: 1px solid white;
+	background-color: green;
+	padding: 7px;
+	border-radius: 5px;
+	color: white;
+	margin-top: 100px;
+}
+
+.invisibleSection {
+	border-top: 1px solid white;
+	background-color: #235C75;
+	color: #235C75;
+}
+
+.congratulationsMessage {
+	background-color: #235C75;
+}
+
+.mainCongratesMessage p{
+	font-family: verdana;
+	font-size: 16px;
+}
