@@ -6,24 +6,34 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="/javajcript/jquery-3.2.1.min(first).js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <base href="http://127.0.0.1:5000">
+        <link rel="stylesheet" href="/stylesheet/livestream.css">
         <base href="http://127.0.0.1:5000">
 	</head>
 	<body>
-		 <div class="container">
-		 	<div>
+		 <div class="container-fluid parentCover">
+		 	<div class="mainHeaderDiv">
 		 		<header>
-		 			<p>homepage</p>
+		 			<button>
+		 				<a href="/homepage">homepage</a>
+		 			</button>
 		 		</header>
 		 	</div>
-		 	<div>
-		 		<video src="/video/livestreamvideo.ogv" id="videoElement"></video>
+		 	<div class="videoDivCover">
+		 		<h3>LiveStream</h3>
+		 		<video controls>
+                      <source src="/video/someVideoFile.ogg" type="video/ogg">
+                               Your browser does not support the video tag.
+                </video>
 		 	</div>
 
 		 	<div class="row footer">
-		 		 <div class="col-sm-6">
+		 		 <div class="col-xs-6">
 		 		 	<p>mami logo</p>
 		 		 </div>
-		 		 <div class="col-sm-3">
+		 		 <div class="col-xs-3">
 		 		 	<ul>
 		 		 		<li>monday</li>
 		 		 		<li>tuesday</li>
@@ -39,7 +49,7 @@
 		 		 		<li>friday</li>
 		 		 	</ul>
 		 		 </div>
-		 		 <div class='col-sm-3'>
+		 		 <div class='col-xs-3'>
 		 		 	<ul>
 		 		 		<li>monday</li>
 		 		 		<li>tuesday</li>
@@ -56,6 +66,7 @@
 		 		 	</ul>
 		 		 </div>
 		 	</div>
+		 	<p id="copyright">copyright mami 2018</p>
 		 </div>
 	</body>
 </html>
