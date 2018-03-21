@@ -25,7 +25,12 @@
                	      <div>
                	      	  <img src="/image/pastormuyiwa.jpg" alt="">
                	      </div><br>
-                      <video src="/video/introductionVideos.ogv" id="videoIntroduction"></video>
+
+                      <video controls>
+                          <source src="/video/someVideoFile.ogg" type="video/ogg">
+                               Your browser does not support the video tag.
+                     </video>
+
                </div>
                 <div class="row">
                      <div class="col-sm-6 listofministries">
@@ -66,6 +71,7 @@
                	   	    <p>further Discription of the Event can be here further Discription of the Event can be here further Discription of the Event can be here</p>
                	   </div>
                </div>
+
 		 	   <div class="landingCover">
 		 	   	   <p id="enterButton">enter</p>
 		 	   	   <p id="entercaption">Enlighteened Citizens of Gods Kingdom</p>
@@ -88,7 +94,7 @@
 		 	   </div>
                <div class="navigationRightSide">
                	    <ul>
-               	    	<li><a href="">LiveStream</a></li>
+               	    	<li><a href="/livestream">LiveStream</a></li>
                	    	<li><a href="">Admin</a></li>
                	    	<li>About MAMI</li>
                	    	<li>PartnerShip</li>
@@ -161,5 +167,12 @@
 		      	 <p>copyright mami 2018</p>
 		      </div>
 		 </div>
+     <script>
+          $('document').ready(function(event){
+                $('#enterButton').click(function(event){
+                     $('.landingCover').slideUp(1500);
+                });
+          });
+     </script>
 	</body>
 </html>
