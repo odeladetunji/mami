@@ -6,14 +6,28 @@
 }
 
 .langingSection {
-	    width: 100%;
-	    margin: 0px;
-    	background-color: #235C75;
-    	margin-top: 0px;
+	padding-top: 200px;
+	padding-bottom: 400px;
+    width: 100%;
+    margin: 0px;
+	background-color: #235C75;
+	margin-top: 0px;
+	background-image: url('/images/pastormuyiwaUpdated.jpg');
+	background-size: cover;
 }
 
+.langingSection h3 {
+	text-align: center;
+	margin: auto;
+	color: white;
+	width: 100%;
+}
 #titleMami {
+	text-align: center;
 	margin-top: 0px;
+	margin: auto;
+	color: white;
+	font-weight: bold;
 }
 
 .landingCover {
