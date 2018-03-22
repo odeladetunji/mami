@@ -15,7 +15,8 @@ var mongo = require('mongodb');
 // bodyparser middleware!!!
 var bodyParser = require('body-parser');
 var homepage = require('./routes/homepage');
-
+var livestream = require('./routes/livestream');
+var homepageFromLiveStream = require('./routes/homepage');
 /*
 modules to handle navigations within the site
 */
@@ -34,6 +35,8 @@ app.use(cookieParser());
 //app.options(cors());
 app.set('view engine', 'ejs');
 app.use('/', homepage);
+app.use('/livestream', livestream);
+app.use('/homepage', homepageFromLiveStream);
 
 /*var bodyParser = require('body-parser');
 // setting mysql variable
