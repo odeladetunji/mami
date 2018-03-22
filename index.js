@@ -17,6 +17,7 @@ var bodyParser = require('body-parser');
 var homepage = require('./routes/homepage');
 var livestream = require('./routes/livestream');
 var homepageFromLiveStream = require('./routes/homepage');
+var admin = require('./routes/admin');
 /*
 modules to handle navigations within the site
 */
@@ -37,6 +38,7 @@ app.set('view engine', 'ejs');
 app.use('/', homepage);
 app.use('/livestream', livestream);
 app.use('/homepage', homepageFromLiveStream);
+app.use('/admin', admin);
 
 /*var bodyParser = require('body-parser');
 // setting mysql variable

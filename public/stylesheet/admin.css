@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: verdana;
+}
+
+.parentCover {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+}
+
+#copyright {
+	padding: 10px;
+	color: orange;
+	background-color: black;
+	text-align: center;
+	width: 100%;
+}
+
+.mainNav {
+	padding-left: 10px;
+	background-color: #203640;
+}
+
+.mainNav ul li {
+	color: white;
+	padding: 10px;
+}
+
+.mainNav ul li:hover {
+	background-color: black;
+    border-radius: 5px;
+}
+
+.mainNav ul li a {
+	text-decoration: none;
+	color: white;
+}
+
+.mainBody button {
+    padding: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid orange;
+    background-color: green;
+    margin-top: 10px;
+}
+
+.mainBody, .formDiv {
+	background-color: #fafafa;
+}
+
+.mainBody {
+	padding-left: 0px;
+}
+
+#firstButton {
+    float: right;
+    margin-right: 10px;
+    background-color: #203640;
+    border: none;
+}
