@@ -247,4 +247,178 @@
     background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
 }
 
+.downloadSection {
+    background-image: url('/images/downloadBackground.jpg');
+    background-size: cover;
+}
 
+.messageAdvert img {
+     margin: auto;
+     width: 80%;
+}
+
+#inputCover {
+	width: 70%;
+	margin-left: 15%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0); /* Black w/ opacity */
+}
+
+#searchMessages {
+	width: 90%;
+	padding: 10px;
+	background-color: transparent;
+	color: white;
+	font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-left: 6%;
+}
+
+#availableMessages {
+	background-color: green;
+	color: white;
+	width: 63%;
+	padding: 15px;
+	border: 1px solid white;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	margin-left: 19.2%;
+}
+
+.listOfMessages {
+	width: 63%;
+	margin-left: 19%;
+	background-color: white;
+}
+
+.listOfMessages ul {
+	list-style-type: none;
+	width: 100%;
+}
+
+.listOfMessages ul li {
+	width: 100%;
+	padding: 10px;
+	border-bottom: 1px solid #eeeeee;
+	padding-left: 10px;
+}
+
+.listOfMessages span {
+	background-color: green;
+	color: white;
+	border-radius: 5px;
+	border: 1px solid orange;
+	padding: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.forMobileDevice {
+	padding-top: 30px;
+	padding-bottom: 300px;
+	background-color:  #203640;
+}
+
+.forMobileDevice ul {
+	width: 100%;
+}
+
+.forMobileDevice ul li {
+	width: 100%;
+	padding: 7px;
+	padding-left: 20px;
+	color: white;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.forMobileDevice span {
+	background-color: green;
+	color: white;
+	border-radius: 5px;
+	border: 1px solid orange;
+	padding: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.OptionClass {
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+
+.partnersForm input, .partnersForm label, .partnersForm select {
+     width: 90%;
+     margin-left: 5%;
+     border: 1px solid #d9edf7;
+     border-radius: 5px;
+     color: default;
+     margin-bottom: 10px;
+     padding: 10px;
+}
+
+.partnersForm button {
+	border: 1px solid orange;
+	color: white;
+	background-color: green;
+	padding: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	margin-left: 5%;
+}
+
+#refreshForm {
+	border: 1px solid orange;
+	color: white;
+	background-color: #203640;
+	padding: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	margin-left: 5%;
+}
+
+.inputTitle {
+	margin-left: 5%;
+	font-weight: bold;
+}
+
+.partnersForm {
+	padding-top: 40px;
+	padding-bottom: 20px;
+	border: 1px solid #eeeeee;
+	width: 95%;
+}
+
+.onlinePaymentPlatforms {
+	width: 100%;
+}
+
+.onlinePaymentPlatforms button {
+	width: 100%;
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid orange;
+	color: white;
+	background-color: #31708f;
+}
+
+.onlinePaymentPlatforms img {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.partnersForm label{
+	background-color: #31708f;
+	color: white;
+	text-align: center;
+}

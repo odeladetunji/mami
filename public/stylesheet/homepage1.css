@@ -37,4 +37,79 @@
 	width: 80%;
 }
 
+.downloadMessagesMobile {
+	background-color: white;
+	width: 100%;
+}
+
+.downloadMessagesMobile form {
+	background-color: white;
+	width: 100%;
+}
+
+.downloadMessagesMobile form input {
+	margin-top: 10px;
+	margin-left: 2.5%;
+	margin-bottom: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid black;
+	width: 95%;
+	color: black;
+}
+
+.downloadMessagesMobile button {
+	margin-left: 2.5%;
+	padding: 7px;
+	background-color: #203640;
+	color: white;
+	border: 1px solid orange;
+	border-radius: 5px;
+
+}
+
+.downloadMessageDynamic ul {
+	padding-left: 2.5%;
+}
+
+.downloadMessageDynamic span {
+	padding: 4px;
+	padding-left: 7px;
+	padding-right: 7px;
+    color: white;
+    background-color: #203640;
+    border-radius: 5px;
+    border: 1px solid orange;
+}
+
+.downloadMessageDynamic ul li{
+	border-bottom: 1px solid #eeeeee;
+	padding: 10px;
+}
+
+.partnersForm {
+   width: 100%;
+}
+
+.partnersForm form{
+   width: 95%;
+}
+
+.partnersForm form input, .partnerForm form select {
+	 margin-left: 2.5%;
+}
+
+.partnersForm button {
+	border: 1px solid orange;
+	color: white;
+	background-color: #203640;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 5%;
+	border-radius: 5px;
+}
+
 }
