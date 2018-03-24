@@ -173,11 +173,15 @@
 }
 
 .listofministries  ul {
+	list-style-type: none;
 	margin: auto;
+    text-align: center;
 }
 
 .listofministries  ul li {
-	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid#d9edf7;
+	padding: 30px;
 }
 
 .largerContact {
@@ -421,4 +425,18 @@
 	background-color: #31708f;
 	color: white;
 	text-align: center;
+}
+
+.visionMissionDiv {
+	width: 100%;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	background-image: url('/images/pastormuyiwaVision.jpg');
+	background-size: cover;	
+    margin-bottom: 10px;
+}
+
+.visionMissionDiv p {
+	color: white;
+	padding: 20px;
 }
