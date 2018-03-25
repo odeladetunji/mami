@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="/javajcript/jquery-3.2.1.min(first).js"></script>
+        <script src="/javascript/jquery-3.2.1.min(first).js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <base href="http://127.0.0.1:5000">
         <link rel="stylesheet" href="/stylesheet/homepage.css">
@@ -34,21 +34,58 @@
                </div>
                 <div class="row">
                      <div class="col-sm-6 listofministries">
-                        <p>MAMI PLATFORMS</p>
+                        <p id="mamiIdentity">MAMI PLATFORMS</p>
                         <ul>
-                            <li>FREEDOM ON AIR</li>
-                            <li>LOVE CHOICES AND OTHER BEAUTIFUL WORDS</li>
-                            <li>MINISTERS IN TRAINING (MIT)</li>
-                            <li>FREEDOM MINISTRY ACADEMY (FMA)</li>
-                            <li>PUBLISHING ARM (FREEDOM CHRONICLES)</li>
-                            <li>REVIVE MINISTRY CAMP (RMC)</li>
-                            <li>BIRTHING THE SEED</li>
-                            <li>LADIES ONLINE MENTORING SCHOOL</li>
+                            <li id="freedom1">FREEDOM ON AIR</li>
+                                 <p class="mamiPlatForms" id="freedom">Freedom on Air is our Radio and Video platform through which we take the gospel of our Lord Jesus into the homes of millions and hundreds of thousands that we naturally may not have been privileged to see or meet physically.
+                                 This platform empowers MAMI to reach more souls with the message of freedom.
+                                 <br>
+                                 TV, RADIO, FACEBOOK, YOUTUBE.
+                                </p>
+                            <li class="mamiPlatForms" id="love1">LOVE CHOICES AND OTHER BEAUTIFUL WORDS</li>
+                                 <p class="mamiPlatForms" id="love">A passion in our heart is the establishment of God’s Children in Godly relationships that will eventually translate to model homes. It’s on the strength of this platform that we minister to singles and equip them with sound knowledge of God’s Word for choices, working out relationships and knowing when to walk out and start over if need be.
+                                 We believe happily ever after begins with choices made from the start of dating. We hope to see you in one of our meetings.
+                                 </p>
+                            <li id="conviction1">MINISTERS IN TRAINING (MIT)</li>
+                                 <p class="mamiPlatForms" id="conviction">A core conviction in our hearts born out of understanding of God’s Word is that it is God’s responsibility to call a man but the man must endeavour to fulfil his call and ministry. MIT is a mentoring platform for Pastors, those in HELPS MINISTRY, ITINERANT TEACHER to help fulfilling the call of God and to minimize casualties and mistakes in the fulfilment of destiny.
+                                 The platform holds its meetings 6 times in a year. Venues are communicated to registered members of MIT. Please feel free to register here.
+                                 </p>
+                            <li id="crucial1">FREEDOM MINISTRY ACADEMY (FMA)</li>
+                                 <p class="mamiPlatForms" id="crucial">A very crucial part of preparation for ministry is a proper, structured, disciplined environment of learning where teaching, training and equipping can be done. FMA is God ordained for this purpose. It is a once in a year ACADEMY that runs for 7 weekends with proper graduation and certification.
+                                 It is an intense boot camp where doctrines are set forth and wisdom is poured out.
+                                 FMA usually provides the door way into MIT. Graduates are encouraged to proceed to Ministers in Training for further mentorship and establishment.
+
+                           </p>
+                            <li id="publishing1">PUBLISHING ARM (FREEDOM CHRONICLES)</li>
+                                 <p class="mamiPlatForms" id="publishing">This is the publishing arm of MAMI. We are saddled with an awesome responsibility to extend the message of freedom that Christ purchased for us through the printed media.
+                                 We do not just publish; we see to the distribution of these power packed materials to the nations.
+                                 Most of our publications are available in hard and soft copies for easier distribution. 
+                                 You can subscribe for our magazine
+                                 </p>
+                            <li id="revive1">REVIVE MINISTRY CAMP (RMC)</li>
+                                 <p class="mamiPlatForms" id="revive">Revive Ministry Camp is our yearly camp meetings with ministry in focus. It is usually a time of deep encounters with God; an unusual season of birthing forth God’s will on earth through intense teachings, the labour room of prayers, powerful impartation of the Spirit and a place of destiny.
+                                 It’s usually a place of refuelling, where fresh oil is injected into wheels of ministry. Make plans to attend this year’s RMC.
+
+</p>
+                            <li id="seed1">BIRTHING THE SEED</li>
+                                 <p class="mamiPlatForms" id="seed">Birthing the Seed has the vision of raising a generation of women who are committed to taking ownership of their future familywise through the instrumentality of prayer, sound teaching and training. It’s home to a lot of hungry and blessed hearts believing God for more manifestations of the spirit in their homes and families.
+                                 </p>
+                            <li id="ladies1">LADIES ONLINE MENTORING SCHOOL</li>
+                                 <p class="mamiPlatForms" id="ladies">Ladies Online Mentoring School is an idea born out of passion for those who for some reasons of distance can’t benefit from real one-on-one physical mentorship. It exists to bridge the gap between mentors and protegees. It’s a platform that brings you closer in spite of  distance.
+                                 </p>
                         </ul>
                      </div>
                      <div class="col-sm-6">
                         <img src="/image/aboutSectionGif.gif" alt="">
-                        <p>something is to be here</p>
+                        <p id="partnerSaga" >PartnerShip with MAMI</p>
+                        <p id="partnerSaga1">Who is a MAMI partner</p>
+                        <div class="discriptionOfPartnerShip">
+                            <p><span style=""><img src='' alt=""></span>A MAMI partner is someone that partners with MAMI financially in other that MAMI will be able to perform her assignment of taking the Gospel to the ends of the earth.<br><br>
+                            A MAMI partner is also someone thats is committed to praying for MAMMI and Pastor Muyiwa, in that the ministry of Christ prospers in his hands as God ordained it.
+                            </p><br>
+                            <p>If you are not a partner already clic on the partnership button below and fill the form that follows</p>
+                            <button>Partner</button>
+                        </div>
                      </div>
                </div>
                <div class="row">
@@ -534,7 +571,7 @@
                      $('.navigationRightSide').slideUp(1500);
                 });*/
 
-                $('#').submit(function(event){
+               /* $('#').submit(function(event){
                        event.preventDefault();
                        $.ajax({
                                   url: "/messages",
@@ -553,6 +590,86 @@
                                   }
                              });
                        return false;
+                });*/
+
+                $('#love1').click(function(){
+                      var love = document.getElementById('love').style.display;
+                      console.log(love + '   this is the value of love');
+                      if(love == 'none'){
+                           $('#love').show();
+                      }else{
+                           $('#love').hide();
+                      }
+                });
+
+                $('#seed1').click(function(){
+                      var seed = document.getElementById('seed').style.display;
+                      console.log(seed + '   this is the value of love');
+                      if(seed == 'none'){
+                           $('#seed').show();
+                      }else{
+                           $('#seed').hide();
+                      }
+                });
+
+                $('#revive1').click(function(){
+                      var revive = document.getElementById('revive').style.display;
+                      console.log(revive + '   this is the value of love');
+                      if(revive == 'none'){
+                           $('#revive').show();
+                      }else{
+                           $('#revive').hide();
+                      }
+                });
+
+                $('#ladies1').click(function(){
+                      var ladies = document.getElementById('ladies').style.display;
+                      console.log(ladies + '   this is the value of love');
+                      if(ladies == 'none'){
+                           $('#ladies').show();
+                      }else{
+                           $('#ladies').hide();
+                      }
+                });
+
+                $('#crucial1').click(function(){
+                      var crucial = document.getElementById('crucial').style.display;
+                      console.log(crucial + '   this is the value of love');
+                      if(crucial == 'none'){
+                           $('#crucial').show();
+                      }else{
+                           $('#crucial').hide();
+                      }
+                });
+
+                $('#conviction1').click(function(){
+                      var conviction = document.getElementById('conviction').style.display;
+                      console.log(conviction + '   this is the value of love');
+                      if(conviction == 'none'){
+                           $('#conviction').show();
+                      }else{
+                           $('#conviction').hide();
+                      }
+                });
+
+                $('#publishing1').click(function(){
+                      var publishing = document.getElementById('publishing').style.display;
+                      console.log(publishing + '   this is the value of love');
+                      if(publishing == 'none'){
+                           $('#publishing').show();
+                      }else{
+                           $('#publishing').hide();
+                      }
+                });
+
+                $('#freedom1').click(function(){
+                      var freedom = document.getElementById('freedom').style.display;
+                      console.log(freedom + '   this is the value of love');
+                      if(freedom == 'none'){
+                           $('#freedom').show();
+                      }else{
+                           $('#freedom').hide();
+                      }
                 });
           });
      </script>

@@ -180,8 +180,51 @@
 
 .listofministries  ul li {
 	margin-bottom: 10px;
-	border: 1px solid#d9edf7;
+	border: 1px solid #d9edf7;
 	padding: 30px;
+}
+
+.listofministries  ul li:hover {
+    background-color: #d9edf7;
+    cursor: pointer;
+}
+
+.discriptionOfPartnerShip {
+	padding: 10px;
+	border: 1px solid #d9edf7;
+	margin-bottom: 10px;
+}
+
+.discriptionOfPartnerShip button {
+	padding: 3px;
+	padding-left: 7px;
+	padding-right: 7px;
+	border: 1px solid orange;
+	color: white;
+	background-color: #203640;
+	border-radius: 5px;
+}
+
+#mamiIdentity {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	padding: 10px;
+	font-size: 20px;
+	border-bottom: 2px solid orange;
+}
+
+.mamiPlatForms {
+    background-color:#d9edf7;
+    padding: 10px;
+    font-weight: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: justify;
+    border: 1px solid #d9edf7;
+    border-top: 25px solid silver;
+    border-top-left-radius: 4px;
+    display: none;
 }
 
 .largerContact {
