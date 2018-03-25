@@ -60,7 +60,10 @@
 
 .downloadMessagesMobile button {
 	margin-left: 2.5%;
-	padding: 7px;
+	padding: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 1px;
 	background-color: #203640;
 	color: white;
 	border: 1px solid orange;
@@ -74,6 +77,8 @@
 
 .downloadMessageDynamic span {
 	padding: 4px;
+	padding-top: 1px;
+	padding-bottom: 1px;
 	padding-left: 7px;
 	padding-right: 7px;
     color: white;
@@ -103,8 +108,8 @@
 	border: 1px solid orange;
 	color: white;
 	background-color: #203640;
-	padding-top: 3px;
-	padding-bottom: 3px;
+	padding-top: 1px;
+	padding-bottom: 1px;
 	padding-left: 10px;
 	padding-right: 10px;
 	margin-bottom: 10px;
@@ -112,4 +117,52 @@
 	border-radius: 5px;
 }
 
+.lastForm {
+   width: 95%;
+   margin-left: 2.5%;
+   margin-top: 10px;
+   border: 1px solid #eeeeee;
+   padding-top: 5px;
+   padding-bottom: 10px;
+   border-radius: 3px;
+   margin-bottom: 10px;
+}
+
+.lastForm p {
+	padding: 10px;
+	padding-top: 0px;
+}
+
+.lastForm input, .lastForm textarea, .lastForm label {
+	width: 95%;
+	margin-bottom: 7px;
+	border-radius: 3px;
+	padding: 5px;
+	margin-left: 2.5%;
+	border: 1px solid #eeeeee;
+}
+
+.lastForm textarea {
+	height: 150px;
+}
+
+.lastForm button {
+	background-color: #203640;
+	color: white;
+	padding: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border: 1px solid orange;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	margin-left: 3%;
+}
+
+.lastForm label {
+	border: none;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
 }

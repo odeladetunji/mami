@@ -80,7 +80,9 @@
 .mainCongratesMessage button {
 	border: 1px solid white;
 	background-color: green;
-	padding: 7px;
+	padding: 1px;
+	padding-left: 7px;
+	padding-right: 7px;
 	border-radius: 5px;
 	color: white;
 	margin-top: 100px;
@@ -196,7 +198,7 @@
 }
 
 .discriptionOfPartnerShip button {
-	padding: 3px;
+	padding: 1px;
 	padding-left: 7px;
 	padding-right: 7px;
 	border: 1px solid orange;
@@ -263,7 +265,9 @@
 }
 
 .contactForm button {
-	padding: 7px;
+	padding: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
 	color: white;
 	background-color: green;
     border: 1px solid orange;
@@ -414,7 +418,7 @@
 	border: 1px solid orange;
 	color: white;
 	background-color: green;
-	padding: 3px;
+	padding: 1px;
 	padding-left: 6px;
 	padding-right: 6px;
 	margin-bottom: 10px;
@@ -435,8 +439,7 @@
 }
 
 .inputTitle {
-	margin-left: 5%;
-	font-weight: bold;
+	margin-left: 5.5%;
 }
 
 .partnersForm {
@@ -453,7 +456,9 @@
 .onlinePaymentPlatforms button {
 	width: 100%;
 	margin-top: 10px;
-	padding: 10px;
+	padding: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
 	border: 1px solid orange;
 	color: white;
 	background-color: #31708f;
@@ -483,3 +488,62 @@
 	color: white;
 	padding: 20px;
 }
+
+#partnerSaga, #partnerSaga1 {
+	text-align: center;
+	font-weight: bold;
+}
+#partnerSaga1 {
+   color: cadetblue;
+}
+
+.recommendedMessages img {
+	width: 95%;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px solid #eeeeee;
+	margin-left: 2.5%;
+}
+
+#firstMessageTitle {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.recommendedMessages {
+	width: 95%;
+	margin-left: 2.5%;
+	border: 1px solid #eeeeee;
+	border-top: none;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.messageDiscription {
+	margin-left: 2.5%;
+}
+
+.flexClassForDownloadMessages {
+	margin-top: 10px;
+	padding-top: 20px;
+	margin-left: 2.5%;
+	width: 95%;
+	border: 1px solid #eeeeee;
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 10px;
+}
+
+.flexClassForDownloadMessages div {
+	width: 40%;
+	margin-left: 6%;
+}
+
+.flexClassForDownloadMessages img {
+	width: 100%;
+}
+
+#firstMessageTitle {
+   padding: 10px;
+}
+
