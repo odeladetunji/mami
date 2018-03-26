@@ -96,6 +96,7 @@
 
 .congratulationsMessage {
 	background-color: #203640;
+	display: none;
 }
 
 .mainCongratesMessage p{
@@ -301,6 +302,7 @@
 .downloadSection {
     background-image: url('/images/downloadBackground.jpg');
     background-size: cover;
+    padding-bottom: 100px;
 }
 
 .messageAdvert img {
@@ -308,11 +310,31 @@
      width: 80%;
 }
 
+.triggerFlex {
+   width: 100%;
+   display: flex;
+   flex-wrap: nowrap;
+   border: 1px solid #eeeeee;
+}
+
+#firstpayment:hover, #secondpayment:hover {
+    border: 1px solid cadetblue;
+}
+
+.triggerFlex div {
+	padding-top: 20px;
+	width: 45%;
+	margin-left: 3%;
+}
+
+.triggerFlex img {
+	width: 100%;
+}
+
 #inputCover {
 	width: 70%;
 	margin-left: 15%;
 	padding-top: 20px;
-	padding-bottom: 20px;
 	margin-top: 20px;
 	background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0); /* Black w/ opacity */
@@ -343,10 +365,13 @@
 
 .listOfMessages {
 	width: 63%;
-	margin-left: 19%;
+	margin-left: 19.2%;
 	background-color: white;
 }
 
+.messagelist {
+	margin-top: 10px;
+}
 .listOfMessages ul {
 	list-style-type: none;
 	width: 100%;
@@ -367,6 +392,11 @@
 	padding: 3px;
 	padding-left: 5px;
 	padding-right: 5px;
+}
+
+.listOfMessages {
+	z-index: 2;
+	position: absolute;
 }
 
 .forMobileDevice {
@@ -547,3 +577,30 @@
    padding: 10px;
 }
 
+.messageAdvert img {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.messageAdvert {
+	margin-bottom: 50px;
+}
+
+.downloadGroupTwo img {
+	width: 80%;
+	margin-left: 10%;
+}
+
+.downloadGroupTwo {
+	margin-top: 40px;
+}
+
+.downloadGroupTwo p {
+	color: white;
+	margin-left: 10%;
+}
+
+.downloadGroupOne p {
+	color: white;
+	margin-left: 10%;
+}

@@ -93,6 +93,17 @@
                         <div class="visionMissionDiv">
                             <p><span>Vision</span> – Taking the message of FREEDOM to the nations, stressing with simplicity and clarity the liberty of believers in Christ and raising other freedom agents across the globe.</p>
                         </div>
+                        <p>Online Payment</p>
+                        <div class="triggerFlex">
+                            <div>
+                                <img src="/images/paypal.jpg" alt="" id="firstpayment">
+                                <p>paypal</p>
+                            </div>
+                            <div>
+                                <img src="/images/skrill.jpg" alt="" id="secondpayment">
+                                <p>Skrill</p>
+                            </div>
+                        </div>
                    </div>
                    <div class="col-sm-6">
                        <form action="" class="partnersForm">
@@ -356,7 +367,7 @@
                	   	    <p>further Discription of the Event can be here further Discription of the Event can be here further Discription of the Event can be here</p>
                	   </div>
                </div>
-		 	   <div class="landingCover" style="display: none;">
+		 	   <div class="landingCover" style="">
 		 	   	   <p id="enterButton">enter</p>
 		 	   	   <p id="entercaption">Enlighteened Citizens of Gods Kingdom</p>
 		 	   </div>
@@ -385,8 +396,8 @@
                	    	<li>PartnerShip</li>
                	    	<li>Vision</li>
                	    	<li>Mission</li>
-                      <li>Download Messages</li>
-                      <li>Ministry News and Events</li>
+                        <li>Download Messages</li>
+                        <li>Ministry News and Events</li>
                     </ul>
                </div>
           <div class="row downloadSection">
@@ -396,15 +407,7 @@
              <div id="inputCover"> 
                   <input type="text" id="searchMessages" value="Enter message name" name="searchMessage"><br>
              </div>
-             <div class="messagelist">
-                 <select name="availableMessages" id="availableMessages">
-                     <option value="Check messages list" class="OptionClass">See Available Messages</option>
-                     <option value="Check messages list" class="OptionClass">Check messages list</option>
-                     <option value="Check messages list" class="OptionClass">Check messages list</option>
-                     <option value="Check messages list" class="OptionClass">Check messages list</option>
-                 </select>
-             </div>
-             <div class="listOfMessages">
+              <div class="listOfMessages" style="display: none;">
                  <ul>
                    <li>Fire Down Below <span>download</span></li>
                    <li>Anointing <span>download</span></li>
@@ -413,7 +416,16 @@
                    <li>The believers Autority <span>download</span></li>
                  </ul>
              </div>
-             <div class="forMobileDevice">
+             <div class="messagelist">
+                 <select name="availableMessages" id="availableMessages">
+                     <option value="Check messages list" class="OptionClass">See Available Messages</option>
+                     <option value="Check messages list" class="OptionClass">Check messages list</option>
+                     <option value="Check messages list" class="OptionClass">Check messages list</option>
+                     <option value="Check messages list" class="OptionClass">Check messages list</option>
+                 </select>
+             </div>
+            
+             <div class="forMobileDevice" style="display: none;">
                  <i class="fa fa-close" id="closeIcon"></i>
                  <ul>
                    <li>Fire Down Below <span>download</span></li>
@@ -430,30 +442,38 @@
              </div>
                <div class="row downloadGroupOne">
                          <div class="col-sm-3 messageAdvert">
-                               <img src="/images" alt="">
+                               <img src="/images/messageAdvert.jpg" alt="">
+                               <p>further discription of message will be here</p>
                          </div>
                          <div class="col-sm-3 messageAdvert">
-                               <img src="/images" alt="">
+                               <img src="/images/messageAdvert.jpg" alt="">
+                               <p>further discription of message will be here</p>
                          </div>
                          <div class="col-sm-3 messageAdvert">
-                               <img src="/images" alt="">
+                               <img src="/images/messageAdvert.jpg" alt="">
+                               <p>further discription of message will be here</p>
                          </div>
                          <div class="col-sm-3 messageAdvert">
-                               <img src="/images" alt="">
+                               <img src="/images/messageAdvert.jpg" alt="">
+                               <p>further discription of message will be here</p>
                          </div>
                </div>
                <div class="row downloadGroupTwo">
                          <div class="col-sm-3 messageAdvert1">
-                               <img src="/images" alt="">
+                               <img src="/images/messageAdvert.jpg" alt="">
+                               <p>further discription of message will be here</p>
                          </div>
                          <div class="col-sm-3 messageAdvert1">
-                               <img src="/images" alt="">
+                               <img src="/images/messageAdvert.jpg" alt="">
+                               <p>further discription of message will be here</p>
                          </div>
                          <div class="col-sm-3 messageAdvert1">
-                               <img src="/images" alt="">
+                               <img src="/images/messageAdvert.jpg" alt="">
+                               <p>further discription of message will be here</p>
                          </div>
                          <div class="col-sm-3 messageAdvert1">
-                               <img src="/images" alt="">
+                               <img src="/images/messageAdvert.jpg" alt="">
+                               <p>further discription of message will be here</p>
                          </div>
                </div>
            </div>
@@ -699,7 +719,48 @@
                            $('#freedom').hide();
                       }
                 });
-          });
-     </script>
+
+                 var arrayObject = [];
+                       $.ajax({
+                                  url: "/ImagesAndWord",
+                                  type: 'GET',
+                                  crossDomain: true,
+                                  async: true,
+                                  cache: false,
+                                  contentType: false,
+                                  processData: false,
+                                  success: function (data) {
+                                     var theLength = data.length;
+                                     var arrayCounter = 0;
+                                     for(data.length){
+                                        arrayCounter++;
+                                        arrayObject.push();
+                                        if(theLength == ){
+                                           callingAnimationFunction();
+                                        }
+                                     }
+                                  },
+                                  error: function(data){
+                                      alert("Cant Connect to Server! /n Something is wrong!");
+                                  }
+                             });
+                       });
+
+            // Calling Animation function!
+            var counter = 0;
+            var arrayObjectLength = arrayObject.length;
+            var landingDivImage = document.getElementsByClassName('langingSection')[0];
+            function callingAnimationFunction(){
+                 setTimeInterval(function(){
+                     //changing animation function!
+                     landingDivImage.backgroundImage = arrayObject[counter];
+                     counter++; 
+                     if(arrayObjectLength == counter){
+                        counter = 0;
+                     }
+                 }, 3000);
+            }
+            
+         </script>
 	</body>
 </html>

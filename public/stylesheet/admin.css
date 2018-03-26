@@ -11,6 +11,7 @@
 	padding-right: 0px;
 	padding-left: 0px;
 	padding-bottom: 0px;
+	background-color: #203640;
 }
 
 #copyright {
@@ -66,3 +67,14 @@
     background-color: #203640;
     border: none;
 }
+
+textarea {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #c0d9da;
+	margin-bottom: 10px;
+	width: 70%;
+	margin-left: 20px;
+	height: 70px;
+}
+
