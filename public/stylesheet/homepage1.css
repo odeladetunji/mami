@@ -43,9 +43,21 @@
 }
 
 .downloadMessagesMobile form {
+    border: 1px solid #eeeeee;
+    border-bottom: none;
+    margin-left: 2.5%;
 	background-color: white;
-	width: 100%;
+	width: 95%;
 }
+
+.downloadMessagesMobile form h4{
+    text-align: center;
+	background-color: white;
+	width: 95%;
+	color: #203640;
+}
+
+
 
 .downloadMessagesMobile form input {
 	margin-top: 10px;
@@ -72,6 +84,7 @@
 }
 
 .downloadMessageDynamic ul {
+	display: none;
 	padding-left: 2.5%;
 }
 
@@ -92,8 +105,21 @@
 	padding: 10px;
 }
 
+.largerContact {
+	display: none;
+}
+
+.flexClassForDownloadMessages {
+	display: none;
+}
+
 .partnersForm {
    width: 100%;
+}
+
+.footer {
+	width: 95%;
+	margin-left: 2.5%;
 }
 
 .partnersForm form{
@@ -168,5 +194,18 @@
 	text-align: center;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
+}
+
+.downloadSection {
+	display: none;
+}
+
+#navIcon{
+	font-size: 25px;
+}
+
+.copyright {
+	width: 95%;
+	margin-left: 2.5%;
 }
 }
