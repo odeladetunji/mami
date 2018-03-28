@@ -15,7 +15,7 @@
 	background-size: cover;
 }
 
-.langingSection h3 {
+.langingSection h4 {
 	text-align: center;
 	margin: auto;
 	color: white;
@@ -119,10 +119,10 @@
 	border-left: 2px solid white;
 	position: absolute;
 	top: 80px;
-	left: 80%;
+	left: 75%;
 	z-index: 2;
 	float: right;
-	width: 20%;
+	width: 25%;
 	background-color: #203640;
 	padding: 10px;
 	padding-bottom: 100px;
@@ -166,6 +166,7 @@
 }
 
 .aboutSection video {
+	margin-top: 0px;
 	padding-left: 3%;
 	width: 95%;
 	margin-bottom: 50px;

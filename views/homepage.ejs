@@ -11,6 +11,8 @@
         <base href="http://127.0.0.1:5000">
         <link rel="stylesheet" href="/stylesheet/homepage.css">
         <link rel="stylesheet" href="/stylesheet/homepage1.css">
+        <link rel="stylesheet" href="/stylesheet/homepage2.css">
+        <link rel="stylesheet" href="/stylesheet/homepage3.css">
         <link rel="stylesheet" href="/stylesheet/footer.css">
         <base href="http://127.0.0.1:5000">
 	</head>
@@ -19,12 +21,12 @@
 		 	   <div class="langingSection">
 		 	   	      <i class="fa fa-bars" id="navIcon"></i>
 		 	   	      <h1 id="titleMami">MAMI</h1><br>
-		 	   	      <h3>Enlighteened citizens of Gods kingdom</h3>
+		 	   	      <h4>Enlighteened citizens of Gods kingdom</h4>
 		 	   </div>
                <div class="aboutSection">
-               	      <div>
+               	      <div style="margin-top: 0px; padding-top: 0px;">
                	      	  <img src="/image/pastormuyiwa.jpg" alt="">
-               	      </div><br>
+               	      </div>
 
                       <video controls>
                           <source src="/video/someVideoFile.ogg" type="video/ogg">
@@ -346,7 +348,7 @@
                        </div>
                    </div>
                </div>
-               <div class="row">
+               <div class="row eventSection">
                	   <div class="col-sm-6 firstEvent">
                	   	   <img src="/images/event.jpg" alt="">
                	   	   <p>further Discription of the Event can be here further Discription of the Event can be here further Discription of the Event can be here</p>
@@ -388,7 +390,7 @@
 			 	   	</div>
 
 		 	   </div>
-               <div class="navigationRightSide">
+               <div class="navigationRightSide" style="display: none;">
                	    <ul>
                	    	<li><a href="/livestream">LiveStream</a></li>
                	    	<li><a href="/admin">Admin</a></li>
@@ -481,7 +483,7 @@
            <div class="downloadMessagesMobile">
                 <form action="/" method="GET" class="mobileForm">
                       <h4>Download Pastors Messages</h4>
-                      <input type="text" value="search for messages">
+                      <input type="text" value="search for messages" id="mobileInput">
                       <button id="displayAvailableForm">See Available Messages</button>
                 </form>
                 <div class="downloadMessageDynamic">
@@ -719,6 +721,10 @@
                       }else{
                            $('#freedom').hide();
                       }
+                });
+
+                $('#navIcon').click(function(){
+                     $('.navigationRightSide').slideToggle('fast');
                 });
             });
  

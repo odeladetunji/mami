@@ -11,12 +11,22 @@
 @media screen and (max-width: 600px) {
     .langingSection {
     	background-color: #203640;
+    	background-image: url('/images/pastormuyiwaagain.jpg');
+        padding-bottom: 0px;
+    }
+
+    .langingSection h4{
+    	padding-bottom: 200px;
     }
 
 .landingCover {
 	background-color: #203640;
 	padding-top: 170px;
 	padding-bottom: 400px;
+}
+
+.aboutSection video {
+	margin-bottom: 10px;
 }
 
 #enterButton {
@@ -33,8 +43,8 @@
 .navigationRightSide {
 	position: absolute;
 	top: 80px;
-	left: 20%;
-	width: 80%;
+	left: 30%;
+	width: 70%;
 }
 
 .downloadMessagesMobile {

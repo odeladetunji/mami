@@ -1,0 +1,17 @@
+@media screen and (min-width: 860px) {
+    .navigationRightSide {
+    	width: 25%;
+    	left: 75%;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .downloadMessagesMobile {
+    	display: none;
+    }
+
+    .downloadGroupOne, .downloadGroupTwo {
+    	display; block;
+    }
+}
+

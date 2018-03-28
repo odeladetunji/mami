@@ -1,0 +1,84 @@
+@media screen and (min-width: 601px) {
+    .onlinePaymentPlatforms {
+        display: none;
+    }
+
+    .smallerContact {
+    	display: none;
+    }
+
+    .recommendedMessages {
+    	display: none;
+    }
+
+    .navigationRightSide {
+    	left: 60%;
+    	width: 40%;
+    }
+
+    .navigationRightSide ul {
+   
+    }
+
+    .navigationRightSide a, .navigationRightSide ul{
+    	width: 100%;
+    }
+
+    .eventSection {
+    	margin-top: 30px;
+    }
+
+    .downloadGroupOne, .downloadGroupTwo {
+    	display: none;
+    }
+
+    #searchMessages {
+    	display: none;
+    }
+
+    #availableMessages {
+    	display: none;
+    }
+
+    .downloadSection {
+    	padding-bottom: 0px;
+    	background-image: none;
+    }
+
+    #inputCover {
+    	display: none;
+    }
+
+    #mobileInput {
+    	width: 90%;
+    	padding: 10px;
+    	border-radius: 5px;
+    	border: 1px solid #eeeeee;
+    	margin-left: 5%;
+    	margin-bottom: 5px;
+    }
+
+    #displayAvailableForm {
+    	padding: 3px;
+    	padding-left: 10px;
+    	padding-right: 10px;
+    	background-color: #203640;
+    	border: 1px solid orange;
+    	color: white;
+    	margin-left: 5%;
+    	border-radius: 5px;
+    }
+
+    .downloadMessageDynamic {
+    	display: none;
+    }
+
+    .mobileForm h4 {
+    	text-align: center;
+    }
+
+    .flexClassForDownloadMessages {
+    	border-top: none;
+    	margin-bottom: 20px;
+    }
+}
