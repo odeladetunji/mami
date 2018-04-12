@@ -21,6 +21,7 @@ var admin = require('./routes/admin');
 var adminAuthentication = require('./routes/adminAuthentication');
 var authenticateAdmin = require('./routes/authenticateAdmin');
 var checkIfAdmin = require('./routes/checkIfAdmin');
+var bs = require("browser-sync").create();
 
 /*
 modules to handle navigations within the site
@@ -68,5 +69,11 @@ connection.connect();
 server.listen(5000, function(){
   console.log("Mami is now running live on Port:   5000");
 });
+
+bs.init({
+	server: 'app'
+});
+
+bs.reload('*.css');
 
 module.export = app;
