@@ -5,6 +5,11 @@
   font-family: verdana;
 }
 
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
 .parentCover {
 	margin-left: 0px;
 	margin-right: 0px;
@@ -58,6 +63,7 @@
 }
 
 .mainBody {
+	margin: 0px;
 	padding-left: 0px;
 }
 
