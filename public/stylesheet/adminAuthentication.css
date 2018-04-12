@@ -1,0 +1,99 @@
+*{
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+	padding: 0px;
+	margin: 0px;
+}
+.parentCoverForAuthenticationSection {
+	padding-top: 100px;
+	padding-bottom: 600px;
+	width: 100%;
+	background-color: #254756;
+}
+
+.coverForAuthentication {
+	width: 40%;
+	margin-left: 30%;
+	border-radius: 5px;
+	border: none;
+}
+
+form{
+	background-color: transparent;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	border: 1px solid orange;
+	border-radius: 5px;
+}
+
+.row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+body {
+	margin-right: 0px;
+	padding-right: 0px;
+}
+
+form input {
+	float: right;
+	width: 70%;
+	border: 1px solid #eeeeee;
+	padding: 7px;
+	background-color: #fafafa;
+	color: black;
+	margin-bottom: 10px;
+	margin-right: 5%;
+}
+
+form button {
+	border: 1px solid orange;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
+	border-radius: 5px;
+	margin-top: 5px;
+	background-color: green;
+	margin-left: 5%;
+}
+
+.username{
+	float: left;
+	width: 20%;
+	color: black;
+	background-color: #eeeeee;
+	padding: 8px;
+	border-right: 1px solid black;
+	margin-left: 5%;
+	border-bottom: none;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+
+#unKnownUser {
+	background-color: white;
+	color: red;
+	text-align: center;
+	padding: 10px;
+	margin-top: 10px;
+	width: 40%;
+	margin-left: 30%;
+	display: none;
+}
+
+#copyright {
+	background-color: black;
+	color: orange;
+	text-align: center;
+	max-width: 100%;
+	padding: 10px;
+	margin-bottom: 0px;
+}
