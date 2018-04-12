@@ -70,10 +70,13 @@ server.listen(5000, function(){
   console.log("Mami is now running live on Port:   5000");
 });
 
-bs.init({
-	server: 'app'
-});
 
-bs.reload('*.css');
+/*bs.reload('*.css');
+bs.reload('*.ejs');
+bs.reload('*.js');
+bs.init({
+	server: 'server',
+	port: 5000
+});*/
 
 module.export = app;
