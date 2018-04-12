@@ -10,6 +10,31 @@
 	margin-right: 0px;
 }
 
+.horizontalRule{
+	color: red !important;
+	background-color: red;
+}
+
+.coverForSubSections {
+	border: 1px solid deepskyblue;
+	padding: 10px;
+	margin-left: 10px;
+}
+
+.landingSection{
+	padding: 7px;
+	border-radius: 5px;
+	border: 1px solid #c0d9da;
+	margin-bottom: 10px;
+	width: 70%;
+	margin-left: 20px;
+}
+
+.landingSectionClass{
+	margin-left: 25%;
+	padding: 10px;
+}
+
 .parentCover {
 	margin-left: 0px;
 	margin-right: 0px;
@@ -47,6 +72,10 @@
 	color: white;
 }
 
+.mainBody{
+	padding-top: 20px;
+}
+
 .mainBody button {
     padding: 7px;
     padding-top: 5px;
@@ -70,6 +99,7 @@
 #firstButton {
     float: right;
     margin-right: 10px;
+    margin-bottom: 20px;
     background-color: #203640;
     border: none;
 }
@@ -82,5 +112,37 @@ textarea {
 	width: 70%;
 	margin-left: 20px;
 	height: 70px;
+}
+
+#ministryPlatForm button {
+	padding: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid orange;
+    background-color: green;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#visionStatement button {
+	padding: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid orange;
+    background-color: green;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.changePicture {
+	margin-left: 20px;
+}
+
+.coverForSubSections button {
+	margin-left: 20px;
 }
 
