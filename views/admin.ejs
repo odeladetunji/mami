@@ -6,10 +6,11 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="/javajcript/jquery-3.2.1.min(first).js"></script>
+        <script src="/javascript/jquery-3.2.1.min(first).js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <base href="http://127.0.0.1:5000">
         <link rel="stylesheet" href="/stylesheet/admin.css">
+        <link rel="stylesheet" href="/stylesheet/admin1.css">
         <link rel="stylesheet" href="/stylesheet/footer.css">
 	</head>
 	<body>
@@ -18,7 +19,8 @@
 		 	<div class="row">
 		 	  <div class="col-sm-3 mainNav">
 		 	  	 <ul>
-			 	  	<li><a href="/homepage">homepage</a></li>
+		 	  	 	<li style="border-radius: 5px;background-color: black; border: 1px solid orange; padding: 5px; padding-left: 10px; margin-top: 5px;">Admin Page</li>
+			 	  	<li><a href="/homepage">Homepage</a></li>
 			 	  	<li><a href="/livestream">LiveStream</a></li>
 		 	     </ul>
 		 	  </div>
@@ -44,7 +46,7 @@
 		 	  	  	
 		 	  	  	<br>
 		 	  	  	<div class="coverForSubSections">
-		 	  	  		 <p style="margin-left: 25%; font-weight: bold;">Embed Video For LiveStreaming Section!</p><br>
+		 	  	  		 <p class="landingSectionClass">Embed Video For LiveStreaming Section!</p>
 		 	  	  		 <input type="file" class="landingSection">
 		 	  	  		 <button>Submit</button>
 		 	  	  	</div>
@@ -83,7 +85,7 @@
                                  We do not just publish; we see to the distribution of these power packed materials to the nations.
                                  Most of our publications are available in hard and soft copies for easier distribution. 
                                  You can subscribe for our magazine</textarea><br>
-                                 <br>
+                                 
                             <button>submit</button><br>
 		 	  	  		</div><br>
 		 	  	  		
@@ -94,9 +96,9 @@
                                  It’s usually a place of refuelling, where fresh oil is injected into wheels of ministry. Make plans to attend this year’s RMC.
 		 	  	  		</textarea><br>
 		 	  	  		<button>submit</button>
-		 	  	  		</div><br>
-		 	  	  	</form><br>
-		 	  	  	<hr>
+		 	  	  		</div>
+		 	  	  	</form>
+		 	  	    <br>
 		 	  	  	<div class="coverForSubSections">
 		 	  	  		<form action="" method="post" action="" id="visionStatement">
 		 	  	  			<input type="text" class="landingSection" value="PARTNERSHIP WITH MAMI"><br>
@@ -122,7 +124,7 @@ If you are not a partner already clic on the partnership button below and fill t
 </div><br>
 
 	<div class="coverForSubSections">
-		<h4 id="adverForPlasticSection">Advert For Plastic Section</h4>
+		<p class="landingSectionClass" style="font-weight: bold;">Advert For Plastic Section</p>
 		<form action="">
 		   <p class="changePicture">First Picture</p>
 		   <input type="file" class="landingSection">
@@ -138,11 +140,29 @@ If you are not a partner already clic on the partnership button below and fill t
 </div>
 </div>
 </div>
-</div>
-		 	<p id="copyright">copyright mami 2018</p>
+		 <p id="copyright">copyright mami 2018</p>
 		 </div>
-		 <script>
-		 	
+		 <script type="text/javascript">
+		 	   // do this things immidiately after the document is ready!
+		 	   $('document').ready(function(event){
+                    $.ajax({
+                          url: "/gettingAdminContent",
+                          type: 'GET',
+                          crossDomain: true,
+                          async: true,
+                          cache: false,
+                          contentType: "application/json; charset=utf-8",
+                          processData: false,
+                          success: function (data) {
+                             console.log(data);
+                             //update the whole page!
+                          },
+                          error: function(data){
+                              alert("Check D Server! : 127.0.0.1:5000");
+                          }
+                    });
+
+		 	  });
 		 </script>
 	</body>
 </html>
