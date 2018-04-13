@@ -1,0 +1,22 @@
+@media screen and (max-width: 960px) {
+    .mainHeaderDiv {
+        padding: 5px;
+        background-color: transparent;
+    }
+
+    .mainHeaderDiv button {
+        border: 1px solid orange;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    video {
+    
+    }
+
+    .videoDivCover video {
+        width: 100%;
+        margin-left: 0%;
+    }
+}
