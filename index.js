@@ -22,7 +22,8 @@ var adminAuthentication = require('./routes/adminAuthentication');
 var authenticateAdmin = require('./routes/authenticateAdmin');
 var checkIfAdmin = require('./routes/checkIfAdmin');
 var bs = require("browser-sync").create();
-
+var gettingAdminContent = require('./routes/gettingAdminContent');
+var mamiupdate = require('./routes/mamiupdate');
 /*
 modules to handle navigations within the site
 */
@@ -46,6 +47,8 @@ app.use('/admin', admin);
 app.use('/adminAuthentication', adminAuthentication);
 app.use('/authenticateAdmin', authenticateAdmin);
 app.use('/checkIfAdmin', checkIfAdmin);
+app.use('/gettingAdminContent', gettingAdminContent);
+app.use('/mamiupdate', mamiupdate);
 
 /*var bodyParser = require('body-parser');
 // setting mysql variable */
