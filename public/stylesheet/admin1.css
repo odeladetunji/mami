@@ -1,0 +1,54 @@
+@media screen and (max-width: 960px) {
+    .landingSection{
+       padding: 3px;
+       padding-left: 7px;
+       padding-right: 7px;
+	   width: 95%;
+	   margin-left: 5px;
+    }
+    
+    .aboutMami {
+    	width: 95%;
+    	margin-left: 5px;
+    }
+
+    .coverForSubSections {
+    	padding-left: 2px;
+    	padding-right: 2px;
+    }
+
+    .mainBody button {
+    	padding: 1px;
+    	padding-left: 10px;
+    	padding-right: 10px;
+    }
+
+    #ministryPlatForm button {
+        padding: 1px;
+    	padding-left: 10px;
+    	padding-right: 10px;
+    	margin-left: 5px;
+    	background-color: black;
+   }
+
+   #visionStatement button {
+   	    padding: 1px;
+    	padding-left: 10px;
+    	padding-right: 10px;
+    	margin-left: 5px;
+    	background-color: black;
+   }
+
+   .landingSectionClass {
+   	    margin-left: 5%;
+   }
+
+    .coverForSubSections button {
+       margin-left: 5px;
+       background-color: black;
+    }
+
+    textarea {
+    	color: black;
+    }
+}
