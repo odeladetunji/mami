@@ -76,6 +76,17 @@
 	padding-top: 20px;
 }
 
+.successMessage {
+	padding: 20px;
+	color: white;
+	background-color: green;
+	border: 1px solid green;
+	text-align: center;
+	width: 95%;
+	border-radius: 5px;
+	margin-left: 5px;
+	display: none;
+}
 .mainBody button {
     padding: 7px;
     padding-top: 5px;
