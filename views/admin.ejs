@@ -139,27 +139,32 @@ If you are not a partner already clic on the partnership button below and fill t
 <hr>
 <div class="coverForSubSections">
 	<form action="" id="landingSectionForm11">
-		  <input type="file" class="landingSection">
-	      <textarea name="" class="aboutMami">–Taking the message of FREEDOM to the nations, stressing with simplicity and clarity the liberty of believers in Christ and raising other freedom agents across the globe.</textarea>
-	      <input type="text" class="landingSection" value="online payment">
-	      <input type="text" class="landingSection" value="paypal">
-	      <input type="text" class="landingSection" value="Skrill"><br>
+	      <input type="text" class="landingSection" value="online payment" id="onlinepayment">
+	      <input type="text" class="landingSection" value="paypal" id="onlinepaymentone">
+	      <input type="text" class="landingSection" value="Skrill" id="onlinepaymenttwo"><br>
         <p class="successMessage">updated successfully!!!</p>
 	      <button>submit</button>
 	</form>
 </div><br>
+<div class="coverForSubSections">
+  <form action="" id="landingSectionForm12">
+        <input type="file" class="landingSection" id="visionBackgroundPicture">
+        <textarea name="" class="aboutMami" id="visionSte">–Taking the message of FREEDOM to the nations, stressing with simplicity and clarity the liberty of believers in Christ and raising other freedom agents across the globe.</textarea>
+        <button>submit</button>
+  </form>
+</div><br>
 
 	<div class="coverForSubSections">
 		<p class="landingSectionClass" style="font-weight: bold;">Advert For Pastors message</p>
-		<form action="" id="landingSectionForm12">
+		<form action="" id="landingSectionForm13">
 		   <p class="changePicture">First Picture</p>
-		   <input type="file" class="landingSection">
+		   <input type="file" class="landingSection" id="firstfile">
 		   <p class="changePicture">Second Picture</p>
-		   <input type="file" class="landingSection">
+		   <input type="file" class="landingSection" id="secondfile">
 		   <p class="changePicture">Third Picture</p>
-		   <input type="file" class="landingSection">
+		   <input type="file" class="landingSection" id="thirdfile">
 		   <p class="changePicture">Fouth Picture</p>
-		   <input type="file" class="landingSection">
+		   <input type="file" class="landingSection" id="fouthfile">
        <p class="successMessage">uploaded successfully!!!</p>
 		   <button>submit</button>
 	    </form>
@@ -470,11 +475,17 @@ If you are not a partner already clic on the partnership button below and fill t
                     return false;
 		 	   });
 
-		 /*	   $('').submit(function(event){
+		 	   $('#landingSectionForm11').submit(function(event){
 		 	   	     event.preventDefault();
+               var firstData = document.getElementById('onlinepaymentone').value;
+               var secondData = document.getElementById('onlinepaymenttwo').value;
+              
                      $.ajax({
                           url: "/mamiupdate",
-                          data: JSON.stringify({});
+                          data: JSON.stringify({'message': 'onlinepayment',
+                                                'firstData': firstData,
+                                                'secondData': secondData
+                                              }),
                           type: 'POST',
                           crossDomain: true,
                           async: true,
@@ -492,11 +503,17 @@ If you are not a partner already clic on the partnership button below and fill t
                     return false;
 		 	   });
 
-		 	   $('').submit(function(event){
+		 	   $('#landingSectionForm12').submit(function(event){
 		 	   	     event.preventDefault();
+               var firstData = document.getElementById('visionBackgroundPicture').files[0].name;
+               var secondData = document.getElementById('visionSte').value;
+               
                      $.ajax({
                           url: "/mamiupdate",
-                          data: JSON.stringify({});
+                          data: JSON.stringify({'message': 'visionarea',
+                                                'firstData': firstData,
+                                                'secondData': secondData
+                                              }),
                           type: 'POST',
                           crossDomain: true,
                           async: true,
@@ -512,7 +529,39 @@ If you are not a partner already clic on the partnership button below and fill t
                           }
                     });
                     return false;
-		 	   });*/
+		 	   });
+
+         $('#landingSectionForm13').submit(function(event){
+               event.preventDefault();
+               var firstData = document.getElementById('firstfile').files[0].name;
+               var secondData = document.getElementById('secondfile').files[0].name;
+               var secondData = document.getElementById('thirdfile').files[0].name;
+               var secondData = document.getElementById('fouthfile').files[0].name;
+              
+                     $.ajax({
+                          url: "/mamiupdate",
+                          data: JSON.stringify({'message': 'messageAdvertSection',
+                                                'firstData': firstData,
+                                                'secondData': secondData,
+                                                'thirdData': thirdData,
+                                                'fouthData': fouthData,
+                                              }),
+                          type: 'POST',
+                          crossDomain: true,
+                          async: true,
+                          cache: false,
+                          contentType: "application/json; charset=utf-8",
+                          processData: false,
+                          success: function (data) {
+                             console.log(data);
+                             //update the whole page!
+                          },
+                          error: function(data){
+                              alert("Check D Server! : 127.0.0.1:5000");
+                          }
+                    });
+                    return false;
+         });
 		 </script>
 	</body>
 </html>
