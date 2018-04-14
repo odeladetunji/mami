@@ -186,17 +186,32 @@ router.post('/', function(req, res){
           function updateOnlinePayment(){
           	    data1 = req.body.firstData;
 		   	    data2 = req.body.secondData;
-		   	    data3 = req.body.thirdData;
-		   	    data4 = req.body.fouthData;
-		   	    data5 = req.body.fifthData;
-		   	    sql = 'INSERT INTO mamicontent SET mamipartners = ?, mamipartnersubheading = ?, mamipartnerdiscription = ?';
-		        connection.query(sql, [data1, data2, data3, data4, data5], function(error, results, fields){
+		   	    sql = 'INSERT INTO mamicontent SET firstchannel = ?, secondchannel = ?';
+		        connection.query(sql, [data1, data2], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
           }
 
           updateOnlinePayment();
+          return;
+    }
+
+    if(message == 'visionarea'){
+    	  console.log('visionarea');
+          function updateVisionSegment(){
+          	    data1 = req.body.firstData;
+          	    data1 = data1.split('.')[0];
+		   	    data2 = req.body.secondData;
+		   	    sql = 'INSERT INTO mamicontent SET visionbackgroundpicture = ?, visionstatement = ?';
+		        connection.query(sql, [data1, data2], function(error, results, fields){
+		            if(error) throw error;
+		            res.send({'message': 'ok'});
+		            console.log('successfull');
+		        });
+          }
+
+          updateVisionSegment();
           return;
     }
     
