@@ -13,6 +13,8 @@ router.post('/', function(req, res){
     var data5;
     var data6;
     var sql;
+    // queryDefault is just used to insert into a particular row
+    var queryDefault = 'mamiemail';
 	var message = req.body.message;
 	console.log(message);
     var connection = mysql.createConnection({
@@ -31,8 +33,8 @@ router.post('/', function(req, res){
 		   	    data2 = req.body.secondData;
 		   	    console.log(data1);
 		   	    console.log(data2);
-		   	    sql = 'INSERT INTO mamicontent SET mainheading = ?, subheading = ?';
-		        connection.query(sql, [data1, data2], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET mainheading = ?, subheading = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -47,8 +49,8 @@ router.post('/', function(req, res){
 		   	    data1 = req.body.firstData;
 		   	    data1 = data1.split('.')[0];
 		   	    console.log(data1);
-		   	    sql = 'INSERT INTO mamicontent SET introductionvideo = ?';
-		        connection.query(sql, [data1], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET introductionvideo = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -63,8 +65,8 @@ router.post('/', function(req, res){
 		   	    data1 = req.body.firstData;
 		   	    data1 = data1.split('.')[0];
 		   	    console.log(data1);
-		   	    sql = 'INSERT INTO mamicontent SET livestreamvideo = ?';
-		        connection.query(sql, [data1], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET livestreamvideo = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -80,8 +82,8 @@ router.post('/', function(req, res){
 		   	    data2 = req.body.secondData;
 		   	    data3 = req.body.thirdData;
 		   	    console.log(data1);
-		   	    sql = 'INSERT INTO mamicontent SET freedomonair = ?, freedomonairdiscription = ?, freedomonairsubdiscription = ?';
-		        connection.query(sql, [data1, data2, data3], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET freedomonair = ?, freedomonairdiscription = ?, freedomonairsubdiscription = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, data3, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -95,8 +97,8 @@ router.post('/', function(req, res){
           function updateLoveChoices(){
           	    data1 = req.body.firstData;
 		   	    data2 = req.body.secondData;
-		   	    sql = 'INSERT INTO mamicontent SET lovechoices = ?, lovechoicesdescription = ?';
-		        connection.query(sql, [data1, data2], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET lovechoices = ?, lovechoicesdescription = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -110,8 +112,8 @@ router.post('/', function(req, res){
           function updateMinistersnIn(){
           	    data1 = req.body.firstData;
 		   	    data2 = req.body.secondData;
-		   	    sql = 'INSERT INTO mamicontent SET ministersin = ?, ministersindescription = ?';
-		        connection.query(sql, [data1, data2], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET ministersin = ?, ministersindescription = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -125,8 +127,8 @@ router.post('/', function(req, res){
           function updateFreedomMinistry(){
           	    data1 = req.body.firstData;
 		   	    data2 = req.body.secondData;
-		   	    sql = 'INSERT INTO mamicontent SET freedomministry = ?, freedomministrydiscription = ?';
-		        connection.query(sql, [data1, data2], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET freedomministry = ?, freedomministrydiscription = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -140,8 +142,8 @@ router.post('/', function(req, res){
           function updatePublishingArm(){
           	    data1 = req.body.firstData;
 		   	    data2 = req.body.secondData;
-		   	    sql = 'INSERT INTO mamicontent SET publishingarm = ?, publishingarmdiscription = ?';
-		        connection.query(sql, [data1, data2], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET publishingarm = ?, publishingarmdiscription = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -155,8 +157,8 @@ router.post('/', function(req, res){
           function updateReviveMinistry(){
           	    data1 = req.body.firstData;
 		   	    data2 = req.body.secondData;
-		   	    sql = 'INSERT INTO mamicontent SET reviveministry = ?, reviveministrydiscription = ?';
-		        connection.query(sql, [data1, data2], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET reviveministry = ?, reviveministrydiscription = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -171,8 +173,8 @@ router.post('/', function(req, res){
           	    data1 = req.body.firstData;
 		   	    data2 = req.body.secondData;
 		   	    data3 = req.body.thirdData;
-		   	    sql = 'INSERT INTO mamicontent SET mamipartners = ?, mamipartnersubheading = ?, mamipartnerdiscription = ?';
-		        connection.query(sql, [data1, data2, data3], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET mamipartners = ?, mamipartnersubheading = ?, mamipartnerdiscription = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, data3, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -186,8 +188,8 @@ router.post('/', function(req, res){
           function updateOnlinePayment(){
           	    data1 = req.body.firstData;
 		   	    data2 = req.body.secondData;
-		   	    sql = 'INSERT INTO mamicontent SET firstchannel = ?, secondchannel = ?';
-		        connection.query(sql, [data1, data2], function(error, results, fields){
+		   	    sql = 'UPDATE mamicontent SET firstchannel = ?, secondchannel = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		        });
@@ -203,8 +205,32 @@ router.post('/', function(req, res){
           	    data1 = req.body.firstData;
           	    data1 = data1.split('.')[0];
 		   	    data2 = req.body.secondData;
-		   	    sql = 'INSERT INTO mamicontent SET visionbackgroundpicture = ?, visionstatement = ?';
-		        connection.query(sql, [data1, data2], function(error, results, fields){
+		   	    console.log(data1);
+		   	    console.log(data2);
+		   	    sql = 'UPDATE mamicontent SET visionbackgroundpicture = ?, visionstatement = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, queryDefault], function(error, results, fields){
+		            if(error) throw error;
+		            res.send({'message': 'ok'});
+		            console.log('successfull');
+		        });
+          }
+
+          updateVisionSegment();
+          return;
+    }
+
+    if(message == 'messageAdvertSection'){
+    	  console.log('messageAdvertSection');
+          function updateVisionSegment(){
+          	    data1 = req.body.firstData.split('.')[0];
+          	    data2 = req.body.secondData.split('.')[0];
+          	    data3 = req.body.thirdData.split('.')[0];
+          	    data4 = req.body.fouthData.split('.')[0]; 
+          	    console.log(data2);
+                console.log(data1 + ' ' + data2 + ' ' + data3 + ' ' + data4);
+		   	    data2 = req.body.secondData;
+		   	    sql = 'UPDATE mamicontent SET upcomingevent1 = ?, upcomingevent2 = ?, upcomingevent3 = ?, upcomingevent4 = ? WHERE mamiadmin = ?';
+		        connection.query(sql, [data1, data2, data3, data4, queryDefault], function(error, results, fields){
 		            if(error) throw error;
 		            res.send({'message': 'ok'});
 		            console.log('successfull');
