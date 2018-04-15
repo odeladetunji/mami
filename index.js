@@ -24,6 +24,7 @@ var checkIfAdmin = require('./routes/checkIfAdmin');
 var bs = require("browser-sync").create();
 var gettingAdminContent = require('./routes/gettingAdminContent');
 var mamiupdate = require('./routes/mamiupdate');
+var gettingMamiContent = require('./routes/gettingMamiContent');
 /*
 modules to handle navigations within the site
 */
@@ -49,6 +50,7 @@ app.use('/authenticateAdmin', authenticateAdmin);
 app.use('/checkIfAdmin', checkIfAdmin);
 app.use('/gettingAdminContent', gettingAdminContent);
 app.use('/mamiupdate', mamiupdate);
+app.use('/gettingMamiContent', gettingMamiContent);
 
 /*var bodyParser = require('body-parser');
 // setting mysql variable */
