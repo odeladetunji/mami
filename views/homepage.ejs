@@ -609,7 +609,32 @@
 		      </div>
 		 </div>
      <script>
-          $('document').ready(function(event){
+                $('document').ready(function(event){
+                       $.ajax({
+                                  url: "/gettingMamiContent",
+                                  type: 'GET',
+                                  crossDomain: true,
+                                  async: true,
+                                  cache: false,
+                                  contentType: false,
+                                  processData: false,
+                                  success: function (data) {
+                                      console.log(data);
+                                      //changeContents(data);
+                                  },
+                                  error: function(data){
+                                      alert("Cant Connect to Server! /n Something is wrong!");
+                                  }
+                             });
+
+                             function changeContents(mamicontent){
+                                     for(x in mamicontent){
+                                          // codelogic goes here!!
+                                         // check for contents
+                                     }
+                             }
+                });
+
                 $('#enterButton').click(function(event){
                      $('.landingCover').slideUp(1500);
                 });
@@ -726,7 +751,6 @@
                 $('#navIcon').click(function(){
                      $('.navigationRightSide').slideToggle('fast');
                 });
-            });
  
              /*    var arrayObject = [];
                        $.ajax({
