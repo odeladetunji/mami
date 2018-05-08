@@ -1,6 +1,22 @@
 var http = require('http');
 var express = require('express');
+var multer = require('multer');
 var mysql = require('mysql');
+//var fileUpload = require('express-fileupload');
+
+var storage =   multer.diskStorage({
+			destination: function (req, file, callback) {
+			callback(null, './public/images/');
+			},
+			filename: function (req, file, callback) {
+			// callback(null, file.fieldname + '-' + Date.now());
+			callback(null, file.originalname);
+			//email = req.body.name;
+			}
+		});
+
+var upload = multer({ storage : storage,
+                      limits: {fileSize: 1000000} }).single('imagefile');
 var router = express.Router();
 
 
@@ -45,7 +61,7 @@ router.post('/', function(req, res){
 	}
     
     if(message == "replaceIntroductionVideo"){
-          function updateIntroductionVideoColumn(){
+         function updateIntroductionVideoColumn(){
 		   	    data1 = req.body.firstData;
 		   	    data1 = data1.split('.')[0];
 		   	    console.log(data1);
@@ -55,6 +71,11 @@ router.post('/', function(req, res){
 		            res.send({'message': 'ok'});
 		        });
          }
+         upload(req, res, function(error){
+         	console.log(req.file);
+         	console.log('this out to work!');
+            if(error)throw error;
+         });
 
 		 updateIntroductionVideoColumn();
 		 return;
