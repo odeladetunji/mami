@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<head>
 		<title>mami</title>
-		<meta charset="utf-8">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -36,12 +36,12 @@
 		 	  	  		      <button>submit</button>
                 </form>
 		 	  	  	</div>
-		 	  	  		<hr class="horizontalRule">
+		 	  	  	     <hr class="horizontalRule">
 		 	  	    <div class="coverForSubSections">
-		 	  	    	 <form action="" method="POST" id="landingSectionForm2">
+		 	  	    	 <form action="" method="POST" id="landingSectionForm2" name="videoFile" enctype="multipart/form-data">
 		 	  	  		      <label for="" class="landingSectionClass">Replace Video Content</label>
-		 	  	  		      <input type="file" class="landingSection" id="replaceVideo">
-                      <p class="successMessage">uploaded successfully!!!</p>
+		 	  	  		      <input type="file" class="landingSection" id="replaceVideo" name="imagefile">
+                      <p class="successMessage" id="successMessage1">uploaded successfully!!!</p>
 		 	  	  		      <button>submit</button>
 		 	  	  	     </form>
 		 	  	    </div>
@@ -175,7 +175,7 @@ If you are not a partner already clic on the partnership button below and fill t
 		 <p id="copyright">copyright mami 2018</p>
 		 </div>
 		 <script type="text/javascript">
-		 	   // do this things immidiately after the document is ready!
+		 	   // do this things immidiately after the document is ready!!
 		 	   $('document').ready(function(event){
                     $.ajax({
                           url: "/gettingAdminContent",
@@ -227,13 +227,21 @@ If you are not a partner already clic on the partnership button below and fill t
 
 		 	   $('#landingSectionForm2').submit(function(event){
 		 	   	     event.preventDefault();
-               var replaceVideo = document.getElementById('replaceVideo').files[0].name;
-               console.log('see if console');
-               console.log(replaceVideo);
+               //var replaceVideo = document.getElementById('replaceVideo').files[0].name;
+               var replaceVideo1 = document.getElementById('replaceVideo').files[0];
+              // console.log(replaceVideo1);
+               var thisForm = document.getElementById('landingSectionForm2');
+               var theForm = document.forms.namedItem("videoFile");
+               var formData = new FormData(thisForm);
+               //formData.append('fileData', document.getElementById('replaceVideo').files[0]);
+               console.log(formData);
+               //console.log(replaceVideo1);
+               console.log('should work now');
+               //console.log(replaceVideo);
                      $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'replaceIntroductionVideo',
-                                                'firstData': replaceVideo}),
+                          url: "/mamiupdatetest",
+                          data: JSON.stringify(formData), /*JSON.stringify({'message': 'replaceIntroductionVideo',
+                                                'firstData': replaceVideo, 'formData': formData}),*/
                           type: 'POST',
                           crossDomain: true,
                           async: true,
@@ -242,9 +250,9 @@ If you are not a partner already clic on the partnership button below and fill t
                           processData: false,
                           success: function (data) {
                              console.log(data);
-                             $('.').show();
+                             $('#successMessage1').show();
                              setTimeout(function(){
-                                $('.').hide();
+                                $('#successMessage1').hide();
                              }, 3000);
                           },
                           error: function(data){
