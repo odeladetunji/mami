@@ -36,21 +36,21 @@
 		 	  	  		      <button>submit</button>
                 </form>
 		 	  	  	</div>
-		 	  	  	     <hr class="horizontalRule">
+		 	  	  	<hr class="horizontalRule">
 		 	  	    <div class="coverForSubSections">
 		 	  	    	 <form action="" method="POST" id="landingSectionForm2" name="videoFile" enctype="multipart/form-data">
-		 	  	  		      <label for="" class="landingSectionClass">Replace Video Content</label>
-		 	  	  		      <input type="file" class="landingSection" id="replaceVideo" name="imagefile">
-                      <p class="successMessage" id="successMessage1">uploaded successfully!!!</p>
+		 	  	  		      <label for="" class="landingSectionClass">Replace Video Content22</label>
+		 	  	  		      <input type="file" class="landingSection" value="" id="replaceVideo" name="imagefile">
+                                          <p class="successMessage" id="successMessage1">uploaded successfully!!!</p>
 		 	  	  		      <button>submit</button>
 		 	  	  	     </form>
 		 	  	    </div>
 		 	  	  	
 		 	  	  	<br>
 		 	  	  	<div class="coverForSubSections">
-		 	  	  		<form action="POST" id="landingSectionForm3">
+		 	  	  		<form method="post" id="landingSectionForm3" action="" enctype="multipart/form-data">
 		 	  	  			 <p class="landingSectionClass">Embed Video For LiveStreaming Section!</p>
-		 	  	  		     <input type="file" class="landingSection" id="videoForLifeStream">
+		 	  	  		     <input type="file" class="landingSection" id="videoForLifeStream" name="videoFile">
                      <p class="successMessage">uploaded succesfully!!!</p>
 		 	  	  		     <button>Submit</button>
 		 	  	  		</form>
@@ -172,402 +172,430 @@ If you are not a partner already clic on the partnership button below and fill t
 </div>
 </div>
 </div>
-		 <p id="copyright">copyright mami 2018</p>
-		 </div>
-		 <script type="text/javascript">
-		 	   // do this things immidiately after the document is ready!!
-		 	   $('document').ready(function(event){
-                    $.ajax({
-                          url: "/gettingAdminContent",
-                          type: 'GET',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                          },
-                          error: function(data){
+<p id="copyright">copyright mami 2018</p>
+</div>
+	     <script type="text/javascript">
+            // do this things immidiately after the document is ready!!
+            $('document').ready(function (event) {
+                  $.ajax({
+                        url: "/gettingAdminContent",
+                        type: 'GET',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
+                        }
+                  });
+            });
 
-		 	  });
-
-		 	   $('#landingSectionForm1').submit(function(event){
-		 	   	     event.preventDefault();
-                     var firstData = document.getElementById('mami').value;
-                     var secondData = document.getElementById('Enlighteened').value
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'landingSection', 
-                                                'firstData': firstData,
-                                                'secondData': secondData
-                                              }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             document.getElementsByClassName('successMessage')[0].style.display = 'block';
-                             setTimeout(function(){
-                                document.getElementsByClassName('successMessage')[0].style.display = 'none';
-                             }, 3000);
-                          },
-                          error: function(data){
+            $('#landingSectionForm1').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('mami').value;
+                  var secondData = document.getElementById('Enlighteened').value
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'landingSection',
+                              'firstData': firstData,
+                              'secondData': secondData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              document.getElementsByClassName('successMessage')[0].style.display = 'block';
+                              setTimeout(function () {
+                                    document.getElementsByClassName('successMessage')[0].style.display = 'none';
+                              }, 3000);
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+                        }
+                  });
+                  return false;
+            });
 
-		 	   $('#landingSectionForm2').submit(function(event){
-		 	   	     event.preventDefault();
-               //var replaceVideo = document.getElementById('replaceVideo').files[0].name;
-               var replaceVideo1 = document.getElementById('replaceVideo').files[0];
-              // console.log(replaceVideo1);
-               var thisForm = document.getElementById('landingSectionForm2');
-               var theForm = document.forms.namedItem("videoFile");
-               var formData = new FormData(thisForm);
-               //formData.append('fileData', document.getElementById('replaceVideo').files[0]);
-               console.log(formData);
-               //console.log(replaceVideo1);
-               console.log('should work now');
-               //console.log(replaceVideo);
-                     $.ajax({
-                          url: "/mamiupdatetest",
-                          data: JSON.stringify(formData), /*JSON.stringify({'message': 'replaceIntroductionVideo',
-                                                'firstData': replaceVideo, 'formData': formData}),*/
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             $('#successMessage1').show();
-                             setTimeout(function(){
-                                $('#successMessage1').hide();
-                             }, 3000);
-                          },
-                          error: function(data){
-                              alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+            $('#landingSectionForm2').submit(function (event) {
+                  event.preventDefault();
+                  var formData = new FormData(this)
+      		/*   event.preventDefault();*/
+                    var theFile = document.getElementById('replaceVideo').files[0];
+                     var fileReader = new FileReader();
+                    // fileReader.onload = sendTheFile(theFile);
+                     fileReader.addEventListener('load', sendTheFile)
+      
+                     function sendTheFile(theFile) {
+                           console.log('sendTheFile was entered');
+                           document.getElementById('replaceVideo').innerText = this.result; 
+                     }
+                     var dataToSend;
+                     fileReader.readAsText(theFile);
+                     console.log(theFile);
+                     console.log('checking file submission');
+                     console.log(formData)
+                     console.log(theFile);
+                        $.ajax({
+                             url: "/mamiupdatetest",
+                             data: formData,
+                             type: 'POST',
+                             crossDomain: true,
+                             async: true,                       
+                             cache: false,
+                             contentType: false,//"multipart/form-data",
+                             processData: false,
+                             success: function (data) {
+                                console.log(data);
+                                $('#successMessage1').show();
+                                setTimeout(function(){
+                                   $('#successMessage1').hide();
+                                }, 3000);
+                             },
+                             error: function(data){
+                                 alert("Check D Server! : 127.0.0.1:5000");
+                             }
+                       });
+                       return false; 
+            });
 
-		 	   $('#landingSectionForm3').submit(function(event){
-		 	   	     event.preventDefault();
-               var videoForLifeStream = document.getElementById('videoForLifeStream').files[0].name;
-               console.log(videoForLifeStream);
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'videoForLifeStream',
-                                                'firstData': videoForLifeStream
-                                              }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             $('.').show();
-                             setTimeout(function(){
-                                $('.').hide();
-                             }, 3000);
-                          },
-                          error: function(data){
-                              alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+            $('#landingSectionForm3').submit(function (event) {
+                  event.preventDefault();
+                  var formData = new FormData(this);
+                     
+                  var theFile = document.getElementById('videoForLifeStream').files[0];
+                  var fileReader = new FileReader();
+                  fileReader.addEventListener('load', sendTheFile);
 
-		 	   $('#landingSectionForm4').submit(function(event){
-		 	   	     event.preventDefault();
-               var freedomon = document.getElementById('freedomon').value;
-               var freedomonair = document.getElementById('freedomonair').value;
-               var freedomonairsub = document.getElementById('freedomonairsub').value;
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'freedomonair',
-                                                'firstData': freedomon, 
-                                                'secondData': freedomonair,
-                                                'thirdData': freedomonairsub
-                                              }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             //update the whole page!
-                          },
-                          error: function(data){
-                              alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+                  function sendTheFile(theFile) {
+                        console.log('sendTheFile was entered');
+                        document.getElementById('videoForLifeStream').innerText = this.result;
+                  }
 
-		 	   $('#landingSectionForm5').submit(function(event){
-		 	   	     event.preventDefault();
-               var firstData = document.getElementById('lovechoices').value;
-               var secondData = document.getElementById('lovechoicesdiscription').value;
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'LoveChoices',
-                                                'firstData': firstData,
-                                                'secondData': secondData
-                                              }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             //update the whole page!
-                          },
-                          error: function(data){
+                  var dataToSend;
+                  fileReader.readAsText(theFile);
+                  console.log(theFile)
+                  console.log(formData);
+                  console.log('this was submitted');
+                  $.ajax({
+                        url: "/videoUpload",
+                        data: formData,
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              $('.').show();
+                              setTimeout(function () {
+                                    $('.').hide();
+                              }, 3000);
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+                        }
+                  });
+                  return false;
+            });
 
-		 	   $('#landingSectionForm6').submit(function(event){
-		 	   	     event.preventDefault();
-               var firstData = document.getElementById('ministersin').value;
-               var secondData = document.getElementById('ministersindes').value;
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'ministersin',
-                                                'firstData': firstData,
-                                                'secondData': secondData
-                                              }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             //update the whole page!
-                          },
-                          error: function(data){
+            $('#landingSectionForm4').submit(function (event) {
+                  event.preventDefault();
+                  var freedomon = document.getElementById('freedomon').value;
+                  var freedomonair = document.getElementById('freedomonair').value;
+                  var freedomonairsub = document.getElementById('freedomonairsub').value;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'freedomonair',
+                              'firstData': freedomon,
+                              'secondData': freedomonair,
+                              'thirdData': freedomonairsub
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+                        }
+                  });
+                  return false;
+            });
 
-		 	   $('#landingSectionForm7').submit(function(event){
-		 	   	     event.preventDefault();
-               var firstData = document.getElementById('freedomministry').value;
-               var secondData = document.getElementById('freedomministrydes').value;
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'freedomministry',
-                                                'firstData': firstData,
-                                                'secondData': secondData}),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             //update the whole page!
-                          },
-                          error: function(data){
+            $('#landingSectionForm5').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('lovechoices').value;
+                  var secondData = document.getElementById('lovechoicesdiscription').value;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'LoveChoices',
+                              'firstData': firstData,
+                              'secondData': secondData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+                        }
+                  });
+                  return false;
+            });
 
-		 	   $('#landingSectionForm8').submit(function(event){
-		 	   	     event.preventDefault();
-               var firstData = document.getElementById('publishingarm').value;
-               var secondData = document.getElementById('publishingarmdiscription').value;
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'publishingarm', 
-                                                'firstData': firstData,
-                                                'secondData': secondData
-                                              }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             //update the whole page!
-                          },
-                          error: function(data){
+            $('#landingSectionForm6').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('ministersin').value;
+                  var secondData = document.getElementById('ministersindes').value;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'ministersin',
+                              'firstData': firstData,
+                              'secondData': secondData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+                        }
+                  });
+                  return false;
+            });
 
-		 	   $('#landingSectionForm9').submit(function(event){
-		 	   	     event.preventDefault();
-               var firstData = document.getElementById('reviveministry').value;
-               var secondData = document.getElementById('reviveministrydiscription').value;
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'reviveministry',
-                                                'firstData': firstData,
-                                                'secondData': secondData
-                                              }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             //update the whole page!
-                          },
-                          error: function(data){
+            $('#landingSectionForm7').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('freedomministry').value;
+                  var secondData = document.getElementById('freedomministrydes').value;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'freedomministry',
+                              'firstData': firstData,
+                              'secondData': secondData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+                        }
+                  });
+                  return false;
+            });
 
-		 	   $('.landingSectionForm10').submit(function(event){
-		 	   	     event.preventDefault();
-               var firstData = document.getElementById('mamipartners').value;
-               var secondData = document.getElementById('mamipartnersub').value;
-               var thirdData = document.getElementById('mamipartnerdisc').value;
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'mamipartners',
-                                                'firstData': firstData,
-                                                'secondData': secondData,
-                                                'thirdData': thirdData
-                                                }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             //update the whole page!
-                          },
-                          error: function(data){
+            $('#landingSectionForm8').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('publishingarm').value;
+                  var secondData = document.getElementById('publishingarmdiscription').value;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'publishingarm',
+                              'firstData': firstData,
+                              'secondData': secondData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+                        }
+                  });
+                  return false;
+            });
 
-		 	   $('#landingSectionForm11').submit(function(event){
-		 	   	     event.preventDefault();
-               var firstData = document.getElementById('onlinepaymentone').value;
-               var secondData = document.getElementById('onlinepaymenttwo').value;
-              
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'onlinepayment',
-                                                'firstData': firstData,
-                                                'secondData': secondData
-                                              }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             //update the whole page!
-                          },
-                          error: function(data){
+            $('#landingSectionForm9').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('reviveministry').value;
+                  var secondData = document.getElementById('reviveministrydiscription').value;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'reviveministry',
+                              'firstData': firstData,
+                              'secondData': secondData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+                        }
+                  });
+                  return false;
+            });
 
-		 	   $('#landingSectionForm12').submit(function(event){
-		 	   	     event.preventDefault();
-               var firstData = document.getElementById('visionBackgroundPicture').files[0].name;
-               var secondData = document.getElementById('visionSte').value;
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'visionarea',
-                                                'firstData': firstData,
-                                                'secondData': secondData
-                                              }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             //update the whole page!
-                          },
-                          error: function(data){
+            $('.landingSectionForm10').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('mamipartners').value;
+                  var secondData = document.getElementById('mamipartnersub').value;
+                  var thirdData = document.getElementById('mamipartnerdisc').value;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'mamipartners',
+                              'firstData': firstData,
+                              'secondData': secondData,
+                              'thirdData': thirdData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-		 	   });
+                        }
+                  });
+                  return false;
+            });
 
-         $('#landingSectionForm13').submit(function(event){
-               event.preventDefault();
-               var firstData = document.getElementById('firstfile').files[0].name;
-               var secondData = document.getElementById('secondfile').files[0].name;
-               var thirdData = document.getElementById('thirdfile').files[0].name;
-               var fouthData = document.getElementById('fouthfile').files[0].name;
-                     $.ajax({
-                          url: "/mamiupdate",
-                          data: JSON.stringify({'message': 'messageAdvertSection',
-                                                'firstData': firstData,
-                                                'secondData': secondData,
-                                                'thirdData': thirdData,
-                                                'fouthData': fouthData,
-                                              }),
-                          type: 'POST',
-                          crossDomain: true,
-                          async: true,
-                          cache: false,
-                          contentType: "application/json; charset=utf-8",
-                          processData: false,
-                          success: function (data) {
-                             console.log(data);
-                             //update the whole page!
-                          },
-                          error: function(data){
+            $('#landingSectionForm11').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('onlinepaymentone').value;
+                  var secondData = document.getElementById('onlinepaymenttwo').value;
+
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'onlinepayment',
+                              'firstData': firstData,
+                              'secondData': secondData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
                               alert("Check D Server! : 127.0.0.1:5000");
-                          }
-                    });
-                    return false;
-         });
-		 </script>
+                        }
+                  });
+                  return false;
+            });
+
+            $('#landingSectionForm12').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('visionBackgroundPicture').files[0].name;
+                  var secondData = document.getElementById('visionSte').value;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'visionarea',
+                              'firstData': firstData,
+                              'secondData': secondData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
+                              alert("Check D Server! : 127.0.0.1:5000");
+                        }
+                  });
+                  return false;
+            });
+
+            $('#landingSectionForm13').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('firstfile').files[0].name;
+                  var secondData = document.getElementById('secondfile').files[0].name;
+                  var thirdData = document.getElementById('thirdfile').files[0].name;
+                  var fouthData = document.getElementById('fouthfile').files[0].name;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'messageAdvertSection',
+                              'firstData': firstData,
+                              'secondData': secondData,
+                              'thirdData': thirdData,
+                              'fouthData': fouthData,
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
+                              alert("Check D Server! : 127.0.0.1:5000");
+                        }
+                  });
+                  return false;
+            });
+      </script>	 
 	</body>
 </html>
