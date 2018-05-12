@@ -158,7 +158,37 @@ router.post('/', function(req, res){
 
           updateReviveMinistry();
           return;
-    }
+	}
+	
+	if (message == 'ladiesOnlineMenthoringSchool') {
+		function updateReviveMinistry() {
+			data1 = req.body.firstData;
+			data2 = req.body.secondData;
+			sql = 'UPDATE mamicontent SET ladiesmenthoring = ?, ladiesmenthoringdiscription = ? WHERE mamiadmin = ?';
+			connection.query(sql, [data1, data2, queryDefault], function (error, results, fields) {
+				if (error) throw error;
+				res.send({ 'message': 'ok' });
+			});
+		}
+
+		updateReviveMinistry();
+		return;
+	}
+
+	if (message == 'birthingTheSeedDiscription') {
+		function updateReviveMinistry() {
+			data1 = req.body.firstData;
+			data2 = req.body.secondData;
+			sql = 'UPDATE mamicontent SET birthingtheseed = ?, birthingtheseeddiscription = ? WHERE mamiadmin = ?';
+			connection.query(sql, [data1, data2, queryDefault], function (error, results, fields) {
+				if (error) throw error;
+				res.send({ 'message': 'ok' });
+			});
+		}
+
+		updateReviveMinistry();
+		return;
+	}
 
     if(message == 'mamipartners'){
           function updatePartnership(){
