@@ -186,11 +186,14 @@
 	margin-bottom: 10px;
 	border: 1px solid #d9edf7;
 	padding: 30px;
+	background-color: #2b364a;
+	color: white;
 }
 
 .listofministries  ul li:hover {
-    background-color: #d9edf7;
+    background-color: lightgreen;
     cursor: pointer;
+    color: black;
 }
 
 .discriptionOfPartnerShip {
