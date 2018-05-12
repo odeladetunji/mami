@@ -1,27 +1,13 @@
 var http = require('http');
 var express = require('express');
-var multer = require('multer');
+var bodyParser = require('body-parser');
 var mysql = require('mysql');
-//var fileUpload = require('express-fileupload');
-
-var storage =   multer.diskStorage({
-			destination: function (req, file, callback) {
-			callback(null, './public/images/');
-			},
-			filename: function (req, file, callback) {
-			// callback(null, file.fieldname + '-' + Date.now());
-			callback(null, file.originalname);
-			//email = req.body.name;
-			}
-		});
-
-var upload = multer({ storage : storage,
-                      limits: {fileSize: 1000000} }).single('imagefile');
+var fs = require('fs');
+var formidable = require('formidable');
 var router = express.Router();
-
-
 router.post('/', function(req, res){
-    console.log(req.body);
+	console.log(req.body);
+	console.log('why is nothing here');
 	var data1;
     var data2;
     var data3;
@@ -81,22 +67,7 @@ router.post('/', function(req, res){
 		 return;
     }
 
-    if(message == 'videoForLifeStream'){
-         function updateVideoForStreamingColumn(){
-		   	    data1 = req.body.firstData;
-		   	    data1 = data1.split('.')[0];
-		   	    console.log(data1);
-		   	    sql = 'UPDATE mamicontent SET livestreamvideo = ? WHERE mamiadmin = ?';
-		        connection.query(sql, [data1, queryDefault], function(error, results, fields){
-		            if(error) throw error;
-		            res.send({'message': 'ok'});
-		        });
-         }
-
-		 updateVideoForStreamingColumn();
-		 return;
-    }
-
+    
     if(message == 'freedomonair'){
          function updateFreedomOnAir(){
          	    data1 = req.body.firstData;
