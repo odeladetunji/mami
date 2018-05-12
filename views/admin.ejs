@@ -79,6 +79,22 @@
                                  <button>submit</button><br>
 		 	  	  			</form>
 		 	  	  		</div><br>
+                <div class="coverForSubSections">
+                  <form action="" id="landingSectionForm14">
+                    <input type="text" class="landingSection" value="BIRTHING THE SEED" id="birthingTheSeed"><br>
+                <textarea name="" class="aboutMami" id="birthingTheSeedDiscription">Birthing the Seed has the vision of raising a generation of women who are committed to taking ownership of their future familywise through the instrumentality of prayer, sound teaching and training. It’s home to a lot of hungry and blessed hearts believing God for more manifestations of the spirit in their homes and families.</textarea><br>
+                                 <p class="successMessage">updated succesfully!!!</p>
+                                 <button>submit</button><br>
+                  </form>
+                </div><br>
+                <div class="coverForSubSections">
+                  <form action="" id="landingSectionForm15">
+                    <input type="text" class="landingSection" value="LADIES ONLINE MENTORING SCHOOL" id="ladiesOnlineMenthoringSchool"><br>
+                <textarea name="" class="aboutMami" id="ladiesOnlineMenthoringSchoolDiscription">Ladies Online Mentoring School is an idea born out of passion for those who for some reasons of distance can’t benefit from real one-on-one physical mentorship. It exists to bridge the gap between mentors and protegees. It’s a platform that brings you closer in spite of distance.</textarea><br>
+                                 <p class="successMessage">updated succesfully!!!</p>
+                                 <button>submit</button><br>
+                  </form>
+                </div><br>
 		 	  	  		<div class="coverForSubSections">
 		 	  	  			<form action="" id="landingSectionForm6">
 		 	  	  				<input type="text" class="landingSection" value="MINISTERS IN TRAINING (MIT)" id="ministersin"><br>
@@ -117,7 +133,7 @@
 		 	  	  			Revive Ministry Camp is our yearly camp meetings with ministry in focus. It is usually a time of deep encounters with God; an unusual season of birthing forth God’s will on earth through intense teachings, the labour room of prayers, powerful impartation of the Spirit and a place of destiny.
                                  It’s usually a place of refuelling, where fresh oil is injected into wheels of ministry. Make plans to attend this year’s RMC.
 		 	  	  		</textarea><br>
-                <p class="successMessage">updated successfully!!!</p>
+                                       <p class="successMessage">updated successfully!!!</p>
 		 	  	  		<button>submit</button>
 		 	  	  			 </form>
 		 	  	  		</div>
@@ -458,6 +474,62 @@ If you are not a partner already clic on the partnership button below and fill t
                         url: "/mamiupdate",
                         data: JSON.stringify({
                               'message': 'reviveministry',
+                              'firstData': firstData,
+                              'secondData': secondData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
+                              alert("Check D Server! : 127.0.0.1:5000");
+                        }
+                  });
+                  return false;
+            });
+
+             $('#landingSectionForm14').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('birthingTheSeed').value;
+                  var secondData = document.getElementById('birthingTheSeedDiscription').value;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'birthingTheSeedDiscription',
+                              'firstData': firstData,
+                              'secondData': secondData
+                        }),
+                        type: 'POST',
+                        crossDomain: true,
+                        async: true,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        processData: false,
+                        success: function (data) {
+                              console.log(data);
+                              //update the whole page!
+                        },
+                        error: function (data) {
+                              alert("Check D Server! : 127.0.0.1:5000");
+                        }
+                  });
+                  return false;
+            });
+
+              $('#landingSectionForm15').submit(function (event) {
+                  event.preventDefault();
+                  var firstData = document.getElementById('ladiesOnlineMenthoringSchool').value;
+                  var secondData = document.getElementById('ladiesOnlineMenthoringSchoolDiscription').value;
+                  $.ajax({
+                        url: "/mamiupdate",
+                        data: JSON.stringify({
+                              'message': 'ladiesOnlineMenthoringSchool',
                               'firstData': firstData,
                               'secondData': secondData
                         }),

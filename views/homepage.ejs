@@ -21,7 +21,7 @@
 		 	   <div class="langingSection">
 		 	   	      <i class="fa fa-bars" id="navIcon"></i>
 		 	   	      <h1 id="titleMami">MAMI</h1><br>
-		 	   	      <h4>Enlighteened citizens of Gods kingdom</h4>
+		 	   	      <h4 id="mamiMotto">Enlighteened citizens of Gods kingdom</h4>
 		 	   </div>
                <div class="aboutSection">
                	      <div style="margin-top: 0px; padding-top: 0px;">
@@ -82,10 +82,10 @@
                         <p id="partnerSaga" >PARTNERSHIP WITH MAMI</p>
                         <p id="partnerSaga1">Who is a MAMI partner</p>
                         <div class="discriptionOfPartnerShip">
-                            <p><span style=""><img src='' alt=""></span>A MAMI partner is someone that partners with MAMI financially in other that MAMI will be able to perform her assignment of taking the Gospel to the ends of the earth.<br><br>
+                            <p id="descriptionOfPartnerp"><span style=""><img src='' alt=""></span>A MAMI partner is someone that partners with MAMI financially in other that MAMI will be able to perform her assignment of taking the Gospel to the ends of the earth.<br><br>
                             A MAMI partner is also someone thats is committed to praying for MAMMI and Pastor Muyiwa, in that the ministry of Christ prospers in his hands as God ordained it.
                             </p><br>
-                            <p>If you are not a partner already clic on the partnership button below and fill the form that follows</p>
+                            <p id="descriptionOfPartnerpContinuation">If you are not a partner already clic on the partnership button below and fill the form that follows</p>
                             <button>Partner</button>
                         </div>
                      </div>
@@ -93,7 +93,7 @@
                <div class="row">
                    <div class="col-sm-6">
                         <div class="visionMissionDiv">
-                            <p><span>Vision</span> – Taking the message of FREEDOM to the nations, stressing with simplicity and clarity the liberty of believers in Christ and raising other freedom agents across the globe.</p>
+                            <p id="visionStatement"><span>Vision</span> – Taking the message of FREEDOM to the nations, stressing with simplicity and clarity the liberty of believers in Christ and raising other freedom agents across the globe.</p>
                         </div>
                         <p>Online Payment</p>
                         <div class="triggerFlex">
@@ -620,6 +620,46 @@
                                   processData: false,
                                   success: function (data) {
                                       console.log(data);
+                                    $('#titleMami').val();
+                                    $('#mamiMotto').val();
+                                    $('#freedom1').val(data.message.freedomonair);
+                                    $('#freedom').val(data.message.freedomonairdiscription);
+                                    $('#love1').val(data.message.lovechoices);
+
+                                    $('#love').val(data.message.lovechoicesdescription);
+                                    $('#conviction1').val(data.message.ministersin);
+                                    $('#conviction').val(data.message.ministersindescription);
+                                    $('#crucial1').val(data.message.freedomministry);
+                                    $('#crucial').val(data.message.freedomministrydiscription);
+                                    $('#publishing1').val(data.message.publishingarm);
+                                    $('#publishing').val(data.message.publishingarmdiscription);
+                                    $('#revive1').val(data.message.reviveministry);
+
+                                    $('#revive').val(data.message.reviveministrydiscription);
+                                    $('#seed').val(data.message.birthingtheseed);
+                                    $('#seed1').val(data.message.birthingtheseeddiscription);
+                                    $('#ladies1').val(data.message.ladiesmenthoring);
+                                    $('#ladies').val(data.message.ladiesmenthoringdiscription);
+                                    $('#partnerSaga').val(data.message.mamipartners);
+                                    $('#partnerSaga1').val(data.message.mamipartnersubheading);
+                                    $('#descriptionOfPartnerp').val(data.message.mamipartnerdiscription);
+                                   /* $('#descriptionOfPartnerpContinuation').val(data.message.);
+                                    $('#visionStatement').val(data.message.);-/
+                                   /* $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();
+                                    $('#').val();*/
                                       //changeContents(data); so
                                   },
                                   error: function(data){
