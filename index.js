@@ -1,21 +1,20 @@
-// mami server start here!
+// the whole application starts here! 
 var http = require('http');
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io').listen(server);
 var path = require('path');
+var formidable = require('formidable');
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json()
 var cookieParser = require('cookie-parser');
 var cors = require('cors');
 var $ = require("jquery");
-var multer = require('multer');
 var fs = require('fs');
 var landing = require('./routes/homepage');
 var mongo = require('mongodb');
-// bodyparser middleware!!!
 var homepage = require('./routes/homepage');
 var livestream = require('./routes/livestream');
 var homepageFromLiveStream = require('./routes/homepage');
@@ -23,11 +22,10 @@ var admin = require('./routes/admin');
 var adminAuthentication = require('./routes/adminAuthentication');
 var authenticateAdmin = require('./routes/authenticateAdmin');
 var checkIfAdmin = require('./routes/checkIfAdmin');
-var bs = require("browser-sync").create();
 var gettingAdminContent = require('./routes/gettingAdminContent');
 var mamiupdate = require('./routes/mamiupdate');
 var gettingMamiContent = require('./routes/gettingMamiContent');
-
+var videoUpload = require('./routes/videoUpload'); 
 var dir = path.join(__dirname, 'public');
 
 var mime = {
@@ -41,36 +39,14 @@ var mime = {
     js: 'application/javascript'
 };
 
-var storage =   multer.diskStorage({
-      destination: function (req, file, callback) {
-      callback(null, './public/images/');
-      },
-      filename: function (req, file, callback) {
-      // callback(null, file.fieldname + '-' + Date.now());
-      callback(null, file.originalname);
-      //email = req.body.name;
-      }
-    });
-
-var upload = multer({ storage : storage,
-                      limits: {fileSize: 1000000} }).single('imagefile');
-
-/*
-modules to handle navigations within the site
-*/
-//var get_Peoplepage = require('./routes/getPeoplepage');
-//var get_Grouppage = require('./routes/getGrouppage');
-
-
 app.use('*', cors());
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
-// parse application/json
-app.use(bodyParser.json({type: 'application/json'}));
+app.use(bodyParser.urlencoded({ extended: true}));
+//parse application/json
+app.use(bodyParser.json({type: 'application/json', limit: '50mb'}));
 app.use(cookieParser());
-//app.options(cors());
 app.set('view engine', 'ejs');
 app.use('/', homepage);
 app.use('/livestream', livestream);
@@ -82,11 +58,9 @@ app.use('/checkIfAdmin', checkIfAdmin);
 app.use('/gettingAdminContent', gettingAdminContent);
 app.use('/mamiupdate', mamiupdate);
 app.use('/gettingMamiContent', gettingMamiContent);
-//app.use('/searchAlgorithm', searchAlgorithm);
+app.use('/videoUpload', videoUpload);
 
-// setting mysql variable */
-
-
+// setting mysql variable !!
 var connection = mysql.createConnection({
     host     : '127.0.0.1',
     user     : 'root',
@@ -115,18 +89,40 @@ app.get('*', function (req, res) {
 });
 
 app.post('/mamiupdatetest', function(req, res){
-      upload(req, res, function(){
-        console.log(req.files);
-        console.log(req.body)
-        res.send(req.body);
-      });
+    console.log('working with formidable');
+    var form = new formidable.IncomingForm();
+    var oldName;
+    var newName;
+    var oldPath;
+
+    // form.encoding = 'utf-8';
+    form.type = true;
+
+    form.parse(req, function(err, fields, files){
+        if (err) {
+            throw err;
+        }
+
+        // form.uploadDir = './public/images';
+        console.log(files);  
+        oldName = files.imagefile.path.split('\\')[2]; // returns the filenname
+        newName = files.imagefile.name;
+        oldPath = './public/testFolder/' + oldName;
+        newPath = './public/tempImages/' + newName;
+    });
+
+    form.uploadDir = './public/testFolder';
+
+    form.on('end', function(){
+        console.log('finished uploading files');
+        fs.rename(oldPath, newPath, function (error) {
+            if (error) {
+                throw error;
+            }
+            console.log('finished renaming file');
+        });
+    });
 });
-
-// listening on port 9000...
-/*app.listen(9000, function () {
- console.log('Our app is still working!')
-})*/
-
 
 server.listen(5000, function(){
   console.log("Mami is now running live on Port:   5000");
